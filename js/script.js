@@ -1,4 +1,6 @@
-const response = await fetch("https://fakestoreapi.com/products", {
+import { STOREBASEURL } from "./variables.js";
+
+const response = await fetch(STOREBASEURL + "/products", {
     method: "GET",
 });
 const data = await response.json();
