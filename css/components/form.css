@@ -1,6 +1,7 @@
 main {
   max-width: 1120px;
   margin: auto;
+  padding: 2rem;
 }
 
 #users {
@@ -17,9 +18,9 @@ span.error {
 form {
   display: grid;
   gap: 1rem 0;
-  padding: 2.5rem;
-  margin: 1rem 0;
-  max-width: 600px;
+  padding: 2.5rem 3rem;
+  margin: 1rem auto;
+  max-width: 500px;
   border: 1px solid var(--brand-color);
 
   legend {
