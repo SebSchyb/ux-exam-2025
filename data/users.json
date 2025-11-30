@@ -1,26 +1,19 @@
 {
   "users": [
     {
-      "email": "test@user.com",
-      "password": "password"
+      "id": "c40e",
+      "email": "seb@schy.net",
+      "password": "OnePass1234!"
     },
     {
-      "email": "user@test.com",
-      "password": "notanotherpassword"
+      "id": "f1e2",
+      "email": "janus@bard.com",
+      "password": "Pass@Word!1234"
     },
     {
-      "email": "email@test.com",
-      "password": "pass"
-    },
-    {
-      "id": "4dca",
-      "email": "fds@fgdg.fgdgf",
-      "password": ""
-    },
-    {
-      "id": "f547",
-      "email": "sssoto@live.dk",
-      "password": ""
+      "id": "3b84",
+      "email": "sab@soto.co.uk",
+      "password": "1234@Pass!"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { getUserByEmail, postUser } from "./api.js";
+import { getUsers, getUserByEmail, postUser } from "./api.js";
 import { validateData, displayError } from "./utils.js";
 
 export const submitLogIn = async (e) => {
@@ -25,10 +25,8 @@ export const submitLogIn = async (e) => {
       error = "Please check your password and try again.";
       displayError(targetInput, error);
     } else {
-      console.log("User login successful.");
-      // store user in localStorage
-      // redirect to auth scoped content
-      window.location.replace("/");
+      localStorage.setItem("userEmail", user.email);
+      window.location.replace("/login.html");
     }
   } catch (e) {
     console.error(e);
@@ -44,39 +42,70 @@ export const submitSignUp = async (e) => {
   const inputPasswordConfirm = data.get("user_password_confirm");
 
   // FORM VALIDATION
-  const { email, password, confirm } = validateData(
-    inputEmail,
-    inputPassword,
-    inputPasswordConfirm
-  );
-
+  const error = validateData(inputEmail, inputPassword, inputPasswordConfirm);
   let targetInput;
 
-  if (email) {
-    targetInput = e.target.querySelector("#signup_user_email");
-    displayError(targetInput, email);
-  }
-  if (password) {
-    targetInput = e.target.querySelector("#signup_user_password");
-    displayError(targetInput, password);
+  if (error?.email || error?.password || error?.confirm) {
+    if (error.email) {
+      targetInput = e.target.querySelector("#signup_user_email");
+      displayError(targetInput, error.email);
+    }
+    if (error.password) {
+      targetInput = e.target.querySelector("#signup_user_password");
+      displayError(targetInput, error.password);
 
-    targetInput = e.target.querySelector("#signup_user_password_confirm");
-    displayError(targetInput, "");
-  }
-  if (confirm) {
-    targetInput = e.target.querySelector("#signup_user_password_confirm");
-    displayError(targetInput, confirm);
+      targetInput = e.target.querySelector("#signup_user_password_confirm");
+      displayError(targetInput, "");
+    }
+    if (error.confirm) {
+      targetInput = e.target.querySelector("#signup_user_password_confirm");
+      displayError(targetInput, error.confirm);
+    }
+    return;
   }
 
   try {
-    // const user = await postUser({ email: inputEmail, password: inputPassword });
-    // console.log("post result:", user);
-    // if (!user) {
-    //   console.log("User doesn't exist.");
-    //   return { error: "User doesn't exist." };
-    // }
-    // window.location.replace("/");
+    const existingUser = await getUserByEmail(inputEmail);
+
+    if (existingUser) {
+      targetInput = e.target.querySelector("#signup_user_email");
+      displayError(targetInput, "Email already in use. Please choose another.");
+      return;
+    }
+
+    const response = await postUser({
+      email: inputEmail,
+      password: inputPassword,
+    });
+
+    if (response.status === "OK") {
+      localStorage.setItem(
+        "signup",
+        "Signup successful! Please sign in below."
+      );
+      window.location.replace("/login.html");
+    }
   } catch (e) {
     console.error(e);
+    localStorage.setItem("signup", "Something went wrong; please try again.");
+    window.location.replace("/login.html");
   }
+};
+
+export const submitSignOut = () => {
+  localStorage.clear();
+  window.location.replace("/login.html");
+};
+
+export const displayUserList = async () => {
+  const data = await getUsers();
+
+  const UserList = document.querySelector("#users ul");
+  const cardTemp = document.querySelector("template#userItem");
+
+  data.forEach((user) => {
+    const userCard = cardTemp.content.cloneNode(true);
+    userCard.querySelector("p").textContent = user.email;
+    UserList.append(userCard);
+  });
 };

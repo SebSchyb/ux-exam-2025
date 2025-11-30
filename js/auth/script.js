@@ -1,24 +1,37 @@
-import { submitLogIn, submitSignUp } from "./modules.js";
-import { getUsers } from "./api.js";
+import {
+  submitLogIn,
+  submitSignOut,
+  submitSignUp,
+  displayUserList,
+} from "./modules.js";
 
 const LogInForm = document.querySelector("#login");
 const SignUpForm = document.querySelector("#signup");
+const SignOutButton = document.querySelector("#signOutBtn");
+const WelcomeUser = document.querySelector("#userWelcome");
+const UserList = document.querySelector("#users ul");
 
-const displayUserList = async () => {
-  const data = await getUsers();
+const authUser = localStorage.getItem("userEmail");
+const signupSuccess = localStorage.getItem("signup");
 
-  const userList = document.querySelector("#users ul");
-  const cardTemp = document.querySelector("template#userItem");
+if (authUser) {
+  WelcomeUser.querySelector("span").textContent = authUser;
+  LogInForm.classList.add("hide");
+  SignUpForm.classList.add("hide");
+} else {
+  SignOutButton.classList.add("hide");
+  WelcomeUser.classList.add("hide");
+  UserList.classList.add("hide");
+}
 
-  data.forEach((user) => {
-    const userCard = cardTemp.content.cloneNode(true);
-    userCard.querySelector("p").textContent = user.email;
-    userList.append(userCard);
-  });
-};
+if (signupSuccess) {
+  WelcomeUser.classList.remove("hide");
+  WelcomeUser.textContent = signupSuccess;
+  localStorage.clear();
+}
 
 LogInForm.addEventListener("submit", submitLogIn);
-
 SignUpForm.addEventListener("submit", submitSignUp);
+SignOutButton.addEventListener("click", submitSignOut);
 
 await displayUserList();

@@ -15,7 +15,7 @@ export const getUserByEmail = async (email) => {
 };
 
 export const postUser = async (data) => {
-  return await fetch(`${SERVER_URL}/users`, {
+  const user = await fetch(`${SERVER_URL}/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,4 +23,6 @@ export const postUser = async (data) => {
     },
     body: JSON.stringify(data),
   }).then((res) => res.json());
+
+  return { ...user, status: "OK" };
 };
