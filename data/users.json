@@ -1,6 +1,26 @@
 {
   "users": [
-    { "email": "test@user.com", "password": "password" },
-    { "email": "user@test.com", "password": "notanotherpassword" }
+    {
+      "email": "test@user.com",
+      "password": "password"
+    },
+    {
+      "email": "user@test.com",
+      "password": "notanotherpassword"
+    },
+    {
+      "email": "email@test.com",
+      "password": "pass"
+    },
+    {
+      "id": "4dca",
+      "email": "fds@fgdg.fgdgf",
+      "password": ""
+    },
+    {
+      "id": "f547",
+      "email": "sssoto@live.dk",
+      "password": ""
+    }
   ]
 }

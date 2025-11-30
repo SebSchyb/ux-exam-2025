@@ -1,12 +1,14 @@
-import { getUserByEmail, getUsers } from "./modules.js";
+import { submitLogIn, submitSignUp } from "./modules.js";
+import { getUsers } from "./api.js";
 
-const logInForm = document.querySelector("#login");
+const LogInForm = document.querySelector("#login");
+const SignUpForm = document.querySelector("#signup");
 
 const displayUserList = async () => {
   const data = await getUsers();
 
   const userList = document.querySelector("#users ul");
-  const cardTemp = document.querySelector("template");
+  const cardTemp = document.querySelector("template#userItem");
 
   data.forEach((user) => {
     const userCard = cardTemp.content.cloneNode(true);
@@ -15,28 +17,8 @@ const displayUserList = async () => {
   });
 };
 
-logInForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+LogInForm.addEventListener("submit", submitLogIn);
 
-  const data = new FormData(logInForm);
-
-  const inputEmail = data.get("user_email");
-  const inputPassword = data.get("user_email");
-
-  console.log(typeof inputPassword);
-
-  try {
-    const user = await getUserByEmail(inputEmail);
-
-    console.log(typeof user.password);
-
-    if (inputPassword === user.password) {
-      console.log("success");
-    }
-    console.log(user);
-  } catch (e) {
-    console.error(e);
-  }
-});
+SignUpForm.addEventListener("submit", submitSignUp);
 
 await displayUserList();
