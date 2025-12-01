@@ -1,0 +1,61 @@
+header {
+  --content-width: 1120px;
+  padding: 0.75rem 0;
+  cursor: default;
+
+  h1,
+  h2 {
+    color: var(--text-color-black);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    max-width: var(--content-width);
+    margin: auto;
+  }
+
+  #auth,
+  #public {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+
+    p {
+      color: oklch(from var(--brand-color) calc(l - 0.1) calc(c + 0.15) h);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  padding: 0.25rem 1rem;
+  border-radius: var(--border-radius);
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+
+  &:hover {
+    background-color: var(--btn-bg-hover);
+  }
+
+  &.primary {
+    --btn-bg: var(--brand-color);
+    --btn-bg-hover: oklch(from var(--btn-bg) calc(l - 0.1) calc(c + 0.1) h);
+  }
+  &.secondary {
+    --btn-bg: var(--dark-grey);
+    --btn-bg-hover: oklch(from var(--btn-bg) calc(l + 0.15) c h);
+  }
+}
+
+.hide {
+  display: none;
+}

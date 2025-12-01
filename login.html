@@ -11,63 +11,25 @@
   <body>
     <header></header>
     <main>
-      <section id="users">
-        <h3 id="userWelcome">Welcome <span></span></h3>
+      <section>
         <form id="login">
           <legend>Sign In</legend>
+          <p id="userStatus"></p>
           <label for="user_email">
             <span>Email</span>
-            <input id="login_user_email" name="user_email" type="text" />
+            <input id="user_email" name="user_email" type="text" />
             <span class="error"></span>
           </label>
           <label for="user_password">
             <span>Password</span>
-            <input
-              id="login_user_password"
-              name="user_password"
-              type="password"
-            />
+            <input id="user_password" name="user_password" type="password" />
             <span class="error"></span>
           </label>
           <button>Login</button>
           <a href="/" class="userReset"> Forgot your email or password? </a>
         </form>
-        <form id="signup">
-          <legend>Create an account</legend>
-          <label for="user_email">
-            <span>Email</span>
-            <input id="signup_user_email" name="user_email" type="text" />
-            <span class="error"></span>
-          </label>
-          <label for="user_password">
-            <span>Password</span>
-            <input
-              id="signup_user_password"
-              name="user_password"
-              type="password"
-            />
-            <span class="error"></span>
-          </label>
-          <label for="user_password_confirm">
-            <span> Confirm password </span>
-            <input
-              id="signup_user_password_confirm"
-              name="user_password_confirm"
-              type="password"
-            />
-            <span class="error"></span>
-          </label>
-          <button>Sign up</button>
-        </form>
-        <ul></ul>
-        <button id="signOutBtn">Sign Out</button>
       </section>
     </main>
     <footer></footer>
-    <template id="userItem">
-      <li>
-        <p class="username"></p>
-      </li>
-    </template>
   </body>
 </html>

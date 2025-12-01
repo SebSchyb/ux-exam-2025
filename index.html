@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="js/store/script.js"></script>
+    <script type="module" src="js/auth/script.js"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components/form.css" />
+    <link rel="stylesheet" href="css/components/authHeader.css" />
   </head>
 
   <body>
     <header>
-      <h1 id="userWelcome">Welcome <span></span></h1>
-      <button id="signOutBtn">Sign Out</button>
+      <div class="container">
+        <h1>Title</h1>
+        <div id="auth">
+          <p id="userStatus"></p>
+          <button id="signOutBtn" class="btn secondary">Sign Out</button>
+        </div>
+        <nav id="public">
+          <a href="/login.html" class="btn primary">Sign In</a>
+          <a href="/signup.html" class="btn secondary">Register</a>
+        </nav>
+      </div>
     </header>
     <main>
+      <section>
+        <ul id="userList">
+          <template>
+            <li>
+              <p></p>
+            </li>
+          </template>
+        </ul>
+      </section>
       <div class="container">
         <div class="row grid" id="item-list">
           <template>

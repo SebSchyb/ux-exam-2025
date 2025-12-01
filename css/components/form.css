@@ -4,10 +4,12 @@ main {
   padding: 2rem;
 }
 
-#users {
-  ul {
-    padding: 2rem 0;
-  }
+#userList {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 0.75rem;
 }
 
 span.error {
