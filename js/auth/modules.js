@@ -33,63 +33,60 @@ export const submitLogIn = async (e) => {
   }
 };
 
-export const submitSignUp = async (e) => {
+export const submit = async (e) => {
   e.preventDefault();
-  const data = new FormData(e.target);
 
-  const inputEmail = data.get("user_email");
-  const inputPassword = data.get("user_password");
-  const inputPasswordConfirm = data.get("user_password_confirm");
+  const currentForm = e.target;
+  const currentFormData = new FormData(currentForm);
 
-  // FORM VALIDATION
-  const error = validateData(inputEmail, inputPassword, inputPasswordConfirm);
-  let targetInput;
+  const { email, password, error } = validateData(currentForm, currentFormData);
 
-  if (error?.email || error?.password || error?.confirm) {
-    if (error.email) {
-      targetInput = e.target.querySelector("#signup_user_email");
-      displayError(targetInput, error.email);
-    }
-    if (error.password) {
-      targetInput = e.target.querySelector("#signup_user_password");
-      displayError(targetInput, error.password);
-
-      targetInput = e.target.querySelector("#signup_user_password_confirm");
-      displayError(targetInput, "");
-    }
-    if (error.confirm) {
-      targetInput = e.target.querySelector("#signup_user_password_confirm");
-      displayError(targetInput, error.confirm);
-    }
-    return;
-  }
+  if (error) return;
 
   try {
-    const existingUser = await getUserByEmail(inputEmail);
+  if (currentForm.id === "signup") {
+    const existingUser = await getUserByEmail(email);
 
     if (existingUser) {
-      targetInput = e.target.querySelector("#signup_user_email");
-      displayError(targetInput, "Email already in use. Please choose another.");
+      const error = "Email already in use. Please choose another.";
+      targetInput = currentForm.querySelector("#user_email");
+      displayError(targetInput, error);
       return;
     }
 
     const response = await postUser({
-      email: inputEmail,
-      password: inputPassword,
+      email: email,
+      password: password,
     });
 
     if (response.status === "OK") {
       localStorage.setItem(
-        "signup",
+        "Status",
         "Signup successful! Please sign in below."
       );
-      window.location.replace("/login.html");
-    }
+      // window.location.replace("/login.html");
+    }}
   } catch (e) {
     console.error(e);
-    localStorage.setItem("signup", "Something went wrong; please try again.");
+    localStorage.setItem("Status", "Something went wrong; please try again.");
+    localStorage.setItem("Details", e);
+    // window.location.replace("/signup.html");
+  }
+    const response = await submitSignUp(email, password).then((res) =>
+      res.json()
+    );
+    console.log(response);
+
+    if (response.error) return;
+
     window.location.replace("/login.html");
   }
+
+  window.location.replace("/");
+};
+
+const submitSignUp = async (email, password) => {
+  
 };
 
 export const submitSignOut = () => {
