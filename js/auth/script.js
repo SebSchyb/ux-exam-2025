@@ -3,6 +3,7 @@ import {
   submitSignOut as signOut,
   displayUserList,
 } from "./modules.js";
+import { clearError } from "./utils.js";
 import { isLoginPage, isSignUpPage } from "./variables.js";
 
 const pageForm = document.querySelector("form");
@@ -22,6 +23,13 @@ if (signupStatus) {
 }
 
 if (isLoginPage || isSignUpPage) {
+  const FormFields = pageForm.querySelectorAll("input");
+
+  FormFields.forEach((input) => {
+    input.addEventListener("blur", (e) => {
+      clearError(e.target);
+    });
+  });
   if (authUser) {
     window.location.replace("/");
   }

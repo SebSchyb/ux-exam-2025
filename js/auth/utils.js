@@ -96,3 +96,8 @@ export const displayError = (targetInput, message) => {
     errorLabel.textContent = "";
   }
 };
+
+export const clearError = (targetInput) => {
+  targetInput.classList.remove("error");
+  targetInput.nextElementSibling.textContent = "";
+};
