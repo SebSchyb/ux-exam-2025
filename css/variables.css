@@ -1,34 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --brand-color: #ff69b4;
-    --dark-grey: #1c162e;
-    --grey: #3e4051;
-    --light-grey: #9095ae;
+	--brand-color: #ff69b4;
+	--dark-grey: #1c162e;
+	--grey: #3e4051;
+	--light-grey: #9095ae;
 
-    --off-white: #d6e1e9;
-    --white: #f7f7f8;
+	--off-white: #d6e1e9;
+	--white: #f7f7f8;
 
-    --text-color-white: white;
-    --text-color-black: #202020;
+	--text-color-white: white;
+	--text-color-black: #202020;
 
-    --body-font: "Poppins", sans-serif;
-    --base-font-size: 16px;
+	--body-font: "Poppins", sans-serif;
+	--base-font-size: 16px;
 
-    --border-radius: 0.5rem;
+	/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--text-size-sm: clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem);
+	--text-size-base: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+	--text-size-lg: clamp(1.2rem, 1.1283rem + 0.3587vw, 1.4063rem);
+	--text-size-xl: clamp(1.44rem, 1.3295rem + 0.5527vw, 1.7578rem);
+	--text-size-2xl: clamp(1.728rem, 1.5648rem + 0.8161vw, 2.1973rem);
+	--text-size-3xl: clamp(2.0736rem, 1.8395rem + 1.1704vw, 2.7466rem);
+	--text-size-4xl: clamp(2.4883rem, 2.1597rem + 1.6433vw, 3.4332rem);
 
-    --max-width-sm: 320px;
-    --max-width-md: 600px;
-    --max-width-lg: 992px;
-    --max-width-xl: 1240px;
+	--border-radius: 0.5rem;
 
-    --padding-base: 1rem;
-    --margin-base: 1rem;
+	--max-width-sm: 320px;
+	--max-width-md: 600px;
+	--max-width-lg: 992px;
+	--max-width-xl: 1240px;
 
-    --padding-base-negative: 1rem;
-    --margin-base-negative: 1rem;
-    --transition: all 200ms ease;
+	--padding-base: 1rem;
+	--margin-base: 1rem;
 
-    --box-shadow-md: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	--padding-base-negative: 1rem;
+	--margin-base-negative: 1rem;
+	--transition: all 200ms ease;
+
+	--box-shadow-md: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }

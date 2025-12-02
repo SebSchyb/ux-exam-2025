@@ -1,19 +1,19 @@
 {
-  "users": [
-    {
-      "id": "c40e",
-      "email": "seb@schy.net",
-      "password": "OnePass1234!"
-    },
-    {
-      "id": "f1e2",
-      "email": "janus@bard.com",
-      "password": "Pass@Word!1234"
-    },
-    {
-      "id": "3b84",
-      "email": "soto@sab.co.uk",
-      "password": "1234@Pass!"
-    }
-  ]
+	"users": [
+		{
+			"id": "c40e",
+			"email": "seb@schy.net",
+			"password": "OnePass1234!"
+		},
+		{
+			"id": "f1e2",
+			"email": "janus@bard.com",
+			"password": "Pass@Word!1234"
+		},
+		{
+			"id": "3b84",
+			"email": "soto@sab.co.uk",
+			"password": "1234@Pass!"
+		}
+	]
 }
