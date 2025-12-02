@@ -1,7 +1,7 @@
 import {
-  submit,
-  submitSignOut as signOut,
-  displayUserList,
+    submit,
+    submitSignOut as signOut,
+    displayUserList,
 } from "./modules.js";
 import { clearError } from "./utils.js";
 import { isLoginPage, isSignUpPage } from "./variables.js";
@@ -17,32 +17,32 @@ const authUser = localStorage.getItem("userEmail");
 const signupStatus = localStorage.getItem("Status");
 
 if (signupStatus) {
-  UserStatus.classList.remove("hide");
-  UserStatus.textContent = signupStatus;
-  localStorage.removeItem("Status");
+    UserStatus.classList.remove("hide");
+    UserStatus.textContent = signupStatus;
+    localStorage.removeItem("Status");
 }
 
 if (isLoginPage || isSignUpPage) {
-  const FormFields = pageForm.querySelectorAll("input");
+    const FormFields = pageForm.querySelectorAll("input");
 
-  FormFields.forEach((input) => {
-    input.addEventListener("blur", (e) => {
-      clearError(e.target);
+    FormFields.forEach((input) => {
+        input.addEventListener("blur", (e) => {
+            clearError(e.target);
+        });
     });
-  });
-  if (authUser) {
-    window.location.replace("/");
-  }
+    if (authUser) {
+        window.location.replace("/");
+    }
 
-  pageForm.addEventListener("submit", submit);
+    pageForm.addEventListener("submit", submit);
 } else if (authUser) {
-  publicHeader.classList.add("hide");
-  UserStatus.textContent = authUser;
-  SignOutButton.addEventListener("click", signOut);
+    publicHeader.classList.add("hide");
+    UserStatus.textContent = authUser;
+    SignOutButton.addEventListener("click", signOut);
 
-  await displayUserList();
+    await displayUserList();
 } else {
-  authHeader.classList.add("hide");
-  UserStatus.classList.add("hide");
-  SignOutButton.classList.add("hide");
+    authHeader.classList.add("hide");
+    UserStatus.classList.add("hide");
+    SignOutButton.classList.add("hide");
 }

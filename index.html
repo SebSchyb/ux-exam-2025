@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script type="module" src="js/store/script.js"></script>
-    <script type="module" src="js/auth/script.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/components/form.css" />
-    <link rel="stylesheet" href="css/components/authHeader.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script type="module" src="js/store/script.js"></script>
+        <script type="module" src="js/auth/script.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/components/form.css" />
+        <link rel="stylesheet" href="css/components/authHeader.css" />
+    </head>
 
-  <body>
-    <header>
-      <div class="container">
-        <h1>Title</h1>
-        <div id="auth">
-          <p id="userStatus"></p>
-          <button id="signOutBtn" class="btn secondary">Sign Out</button>
-        </div>
-        <nav id="public">
-          <a href="/login.html" class="btn primary">Sign In</a>
-          <a href="/signup.html" class="btn secondary">Register</a>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <section>
-        <ul id="userList">
-          <template>
-            <li>
-              <p></p>
-            </li>
-          </template>
-        </ul>
-      </section>
-      <div class="container">
-        <div class="row grid" id="item-list">
-          <template>
-            <article class="card">
-              <img src="image 3.png" alt="" />
-              <section class="text">
-                <h4 class="title">
-                  Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
-                </h4>
-                <p class="category">men's clothing</p>
-                <p class="description">
-                  "Your perfect pack for everyday use and walks in the forest.
-                  Stash your laptop (up to 15 inches) in the padded sleeve, your
-                  everyday"
-                </p>
-              </section>
-              <p class="price"><span>85,00</span> kr</p>
-            </article>
-          </template>
-        </div>
-      </div>
-    </main>
-  </body>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Title</h1>
+                <div id="auth">
+                    <p id="userStatus"></p>
+                    <button id="signOutBtn" class="btn secondary">
+                        Sign Out
+                    </button>
+                </div>
+                <nav id="public">
+                    <a href="/login.html" class="btn primary">Sign In</a>
+                    <a href="/signup.html" class="btn secondary">Register</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section>
+                <ul id="userList">
+                    <template>
+                        <li>
+                            <p></p>
+                        </li>
+                    </template>
+                </ul>
+            </section>
+            <div class="container">
+                <div class="row grid" id="item-list">
+                    <template>
+                        <article class="card">
+                            <img src="image 3.png" alt="" />
+                            <section class="text">
+                                <h4 class="title">
+                                    Fjallraven - Foldsack No. 1 Backpack, Fits
+                                    15 Laptops
+                                </h4>
+                                <p class="category">men's clothing</p>
+                                <p class="description">
+                                    "Your perfect pack for everyday use and
+                                    walks in the forest. Stash your laptop (up
+                                    to 15 inches) in the padded sleeve, your
+                                    everyday"
+                                </p>
+                            </section>
+                            <p class="price"><span>85,00</span> kr</p>
+                        </article>
+                    </template>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
