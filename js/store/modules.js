@@ -5,3 +5,8 @@ export const getItemList = async (endpoint) => {
     const response = await conn.json();
     return response;
 };
+
+export const getItemById = async (id) => {
+    const res = await fetch(`${STOREBASEURL}/products/${id}`);
+    return res.json();
+};

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script type="module" src="js/store/script.js"></script>
+        <script type="module" src="js/auth/script.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/components/singleproduct.css" />
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>Title</h1>
+                <div id="auth">
+                    <p id="userStatus"></p>
+                    <button id="signOutBtn" class="btn secondary">
+                        Sign Out
+                    </button>
+                </div>
+                <nav id="public">
+                    <a href="/login.html" class="btn primary">Sign In</a>
+                    <a href="/signup.html" class="btn secondary">Register</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section>
+                <ul id="userList">
+                    <template>
+                        <li>
+                            <p></p>
+                        </li>
+                    </template>
+                </ul>
+            </section>
+            <section class="container">
+                <div class="row" id="single-product-container">
+                    <template class="single-product-template">
+                        <div class="single-product">
+                            <section class="image-wrapper">
+                                <img src="image 3.png" alt="" />
+                            </section>
+                            <section class="info-wrapper">
+                                <h1 class="title">
+                                    Mens Casual Premium Slim Fit T-Shirts
+                                </h1>
+                                <h2 class="category text-base">
+                                    men's clothing
+                                </h2>
+                                <p class="description text-base">
+                                    Slim-fitting style, contrast raglan long
+                                    sleeve, three-button henley placket, light
+                                    weight & soft fabric for breathable and
+                                    comfortable wearing. And Solid stitched
+                                    shirts with round neck made for durability
+                                    and a great fit for casual fashion wear and
+                                    diehard baseball fans. The Henley style
+                                    round neckline includes a three-button
+                                    placket.
+                                </p>
+                                <div class="add-to-cart-wrapper">
+                                    <p><span class="price">122</span> DKK</p>
+                                    <button type="button" class="btn primary">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-import { getItemList } from "./modules.js";
+import { getItemList, getItemById } from "./modules.js";
 
 // console.log(await getItemList("/products"));
 
@@ -25,4 +25,31 @@ const renderItemList = async (category) => {
     });
 };
 
-await renderItemList("/products");
+//await renderItemList("/products");
+//Single Product Page
+const renderSingleItem = async (item) => {
+    const container = document.querySelector("#single-product-container");
+    const template = document.querySelector("template.single-product-template");
+
+    const clone = template.content.cloneNode(true);
+    clone.querySelector(".title").textContent = item.title;
+    clone.querySelector("img").src = item.image;
+    clone.querySelector(".category").textContent = item.category;
+    clone.querySelector(".description").textContent = item.description;
+    clone.querySelector(".price").textContent = item.price;
+
+    container.appendChild(clone);
+    console.log("itemlist");
+};
+
+// Get URL for item ID and render item
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if (id) {
+    getItemById(id).then(renderSingleItem);
+} else {
+    console.error("No ID found in URL");
+    document.querySelector("#single-product-container").textContent =
+        "No item found";
+}
