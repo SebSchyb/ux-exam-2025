@@ -1,0 +1,105 @@
+@import "reset.css";
+@import "variables.css";
+@import "theme.css";
+@import "layout.css";
+
+body {
+	background-color: var(--text-color-white);
+	color: var(--text-color-black);
+	font-family: var(--body-font);
+	font-size: var(--text-size-base);
+	line-height: 1.5;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a,
+li {
+	font-weight: 700;
+}
+
+/* button styles */
+button,
+input[type="submit"] {
+	background-color: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+	border-radius: 0;
+	appearance: none;
+}
+
+/* heading styles */
+/* h1,
+h2 {
+	color: var(--white);
+} */
+
+.text-sm {
+	font-size: var(--text-size-sm);
+	line-height: var(--leading-relaxed);
+}
+
+.text-base {
+	font-size: var(--text-size-base);
+	line-height: var(--leading-normal);
+}
+
+.text-lg {
+	font-size: var(--text-size-lg);
+	line-height: var(--leading-normal);
+}
+
+.text-xl {
+	font-size: var(--text-size-xl);
+	line-height: var(--leading-snug);
+}
+
+.text-2xl {
+	font-size: var(--text-size-2xl);
+	line-height: var(--leading-snug);
+}
+
+.text-3xl {
+	font-size: var(--text-size-3xl);
+	line-height: var(--leading-tight);
+}
+
+.text-4xl {
+	font-size: var(--text-size-4xl);
+	line-height: var(--leading-tight);
+}
+
+/* COMPONENTS */
+
+.card {
+	display: grid;
+	gap: var(--spacing-s);
+	padding: var(--spacing-s);
+	max-width: var(--max-width-sm);
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	border: 0.5px solid var(--light-grey);
+	transition: var(--transition);
+
+	&:hover {
+		box-shadow: var(--box-shadow-md);
+	}
+
+	img {
+		background-color: white;
+		padding: var(--spacing-s);
+		aspect-ratio: 2/3;
+		/* max-height: 20rem; */
+	}
+}
+
+/* UTILITIES */
+
+.hide {
+	display: none;
+}

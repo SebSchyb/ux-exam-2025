@@ -1,0 +1,29 @@
+body {
+	.container {
+		width: 100%;
+		max-width: var(--max-width-xl);
+		padding: 0 var(--padding-base);
+		margin: 0 auto;
+
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 var(--margin-base-negative);
+		}
+	}
+
+	/* .grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+} */
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(
+			auto-fill,
+			minmax(var(--max-width-sm), 1fr)
+		);
+		gap: var(--spacing-m) var(--spacing-s);
+	}
+}

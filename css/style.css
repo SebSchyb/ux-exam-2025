@@ -1,39 +1,39 @@
-@import "modules.css";
+@import "global.css";
 
 button {
-    display: grid;
-    place-content: center;
-    padding: 0.5rem 0.25rem;
-    background-color: var(--brand-color);
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--text-color-white);
-    cursor: pointer;
-    transition: opacity 0.15s ease-in;
+	display: grid;
+	place-content: center;
+	padding: 0.5rem 0.25rem;
+	background-color: var(--brand-color);
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--text-color-white);
+	cursor: pointer;
+	transition: opacity 0.15s ease-in;
 
-    &:hover {
-        opacity: 0.9;
-    }
+	&:hover {
+		opacity: 0.9;
+	}
 }
 
 .btn {
-    background-color: var(--btn-bg);
-    padding: 0.25rem 1rem;
-    border-radius: var(--border-radius);
-    display: inline-block;
-    cursor: pointer;
-    transition: all 0.15s ease-in;
+	background-color: var(--btn-bg);
+	padding: 0.25rem 1rem;
+	border-radius: var(--border-radius);
+	display: inline-block;
+	cursor: pointer;
+	transition: all 0.15s ease-in;
 
-    &:hover {
-        background-color: var(--btn-bg-hover);
-    }
+	&:hover {
+		background-color: var(--btn-bg-hover);
+	}
 
-    &.primary {
-        --btn-bg: var(--brand-color);
-        --btn-bg-hover: oklch(from var(--btn-bg) calc(l - 0.1) calc(c + 0.1) h);
-    }
-    &.secondary {
-        --btn-bg: var(--dark-grey);
-        --btn-bg-hover: oklch(from var(--btn-bg) calc(l + 0.15) c h);
-    }
+	&.primary {
+		--btn-bg: var(--brand-color);
+		--btn-bg-hover: oklch(from var(--btn-bg) calc(l - 0.1) calc(c + 0.1) h);
+	}
+	&.secondary {
+		--btn-bg: var(--dark-grey);
+		--btn-bg-hover: oklch(from var(--btn-bg) calc(l + 0.15) c h);
+	}
 }
