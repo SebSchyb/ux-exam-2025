@@ -95,10 +95,13 @@ a.btn {
 	border: 0.5px solid var(--border-clr);
 	transition: var(--transition);
 
-	a::after {
-		content: "";
-		position: absolute;
-		inset: 0;
+	a {
+		z-index: 10;
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
 	}
 
 	&.grid {
@@ -106,15 +109,6 @@ a.btn {
 	}
 	&:hover {
 		box-shadow: var(--box-shadow-md);
-	}
-	header {
-		position: relative;
-		.category {
-			text-transform: uppercase;
-			position: absolute;
-			top: -3rem;
-			left: 1rem;
-		}
 	}
 
 	p.description {
@@ -125,17 +119,21 @@ a.btn {
 		-webkit-line-clamp: 3;
 	}
 
-	img {
+	figure {
+		position: relative;
 		background-color: white;
-		aspect-ratio: 3/4;
-		object-fit: contain;
 		padding: var(--spacing-l) var(--spacing-m);
 		border-radius: var(--border-radius);
-	}
+		img {
+			aspect-ratio: 3/4;
+			object-fit: contain;
+		}
 
-	> div {
-		align-items: center;
-		justify-content: space-between;
+		figcaption.category {
+			text-transform: uppercase;
+			position: absolute;
+			left: var(--spacing-2xs);
+		}
 	}
 }
 
