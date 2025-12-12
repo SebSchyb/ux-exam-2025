@@ -1,0 +1,15 @@
+.hero {
+    background:
+    var(--hero-overlay),
+  url('../../assets/images/hero.png');
+    padding: 10rem;
+    article {
+        color: var(--color-neutral-50);
+        div {
+            margin-top: calc(var(--margin-base)*2);
+            display: flex;
+            gap: var(--padding-base);
+        }
+    }
+}
+

@@ -11,6 +11,12 @@
 
 	/* PRIMITIVE COLORS */
 
+	--hero-overlay: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+
+
 	--color-brand-50: oklch(0.959 0.025 345.91);
 	--color-brand-100: oklch(0.927 0.046 346.44);
 	--color-brand-200: oklch(0.849 0.1 348.04);
