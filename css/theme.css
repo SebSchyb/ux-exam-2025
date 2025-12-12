@@ -1,1 +1,45 @@
 /* data themes */
+
+body {
+	--bg-clr-main: none;
+	--text-color-main: var(--text-color-black);
+}
+
+header,
+footer,
+section,
+article,
+.container {
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
+
+	&[data-theme="primary"] {
+		--bg-clr-main: var(--brand-color);
+		--text-clr-main: var(--text-color-white);
+	}
+}
+
+button,
+input[type="submit"],
+a.btn {
+	&[data-theme="primary"] {
+		--btn-bg: var(--brand-color);
+		--btn-label: var(--text-color-white);
+
+		&:hover {
+			--btn-bg: oklch(
+				from var(--brand-color) calc(l - 0.1) calc(c + 0.1) h
+			);
+		}
+	}
+	&[data-theme="secondary"] {
+		--btn-bg: var(--dark-grey);
+		--btn-label: var(--text-color-white);
+
+		&:hover {
+			--btn-bg: oklch(
+				from var(--dark-grey) calc(l - 0.1) calc(c + 0.1) h
+			);
+		}
+	}
+}

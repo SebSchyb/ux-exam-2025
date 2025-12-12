@@ -13,7 +13,7 @@
 
 	<body>
 		<header>
-			<div class="container">
+			<div class="container row">
 				<h1>Title</h1>
 				<div id="auth">
 					<p id="userStatus"></p>
@@ -22,14 +22,18 @@
 					</button>
 				</div>
 				<nav id="public">
-					<a href="/login.html" class="btn primary">Sign In</a>
-					<a href="/signup.html" class="btn secondary">Register</a>
+					<a href="/login.html" class="btn" data-theme="primary"
+						>Sign In</a
+					>
+					<a href="/signup.html" class="btn" data-theme="secondary"
+						>Register</a
+					>
 				</nav>
 			</div>
 		</header>
 		<main>
-			<section>
-				<ul id="userList">
+			<section data-theme="primary">
+				<ul id="userList" class="container row wrap">
 					<template>
 						<li>
 							<p></p>
@@ -37,29 +41,27 @@
 					</template>
 				</ul>
 			</section>
-			<div class="container">
-				<div class="row grid" id="item-list">
-					<template>
-						<article class="card">
-							<img src="image 3.png" alt="" />
-							<section class="text">
-								<h4 class="title">
-									Fjallraven - Foldsack No. 1 Backpack, Fits
-									15 Laptops
-								</h4>
-								<p class="category">men's clothing</p>
-								<p class="description">
-									"Your perfect pack for everyday use and
-									walks in the forest. Stash your laptop (up
-									to 15 inches) in the padded sleeve, your
-									everyday"
-								</p>
-							</section>
-							<p class="price"><span>85,00</span> kr</p>
-						</article>
-					</template>
-				</div>
-			</div>
+			<section
+				class="container grid col-sm align-rows row-4"
+				id="item-list"
+			>
+				<template>
+					<article class="grid card">
+						<img src="image 3.png" alt="" />
+						<header>
+							<h4 class="title">
+								Fjallraven - Foldsack No. 1 Backpack, Fits 15
+								Laptops
+							</h4>
+							<p class="category">men's clothing</p>
+						</header>
+						<div class="row">
+							<p class="price">DKK</p>
+							<button>Add to cart</button>
+						</div>
+					</article>
+				</template>
+			</section>
 		</main>
 	</body>
 </html>

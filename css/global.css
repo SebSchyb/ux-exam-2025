@@ -4,11 +4,18 @@
 @import "layout.css";
 
 body {
-	background-color: var(--text-color-white);
-	color: var(--text-color-black);
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
 	font-family: var(--body-font);
 	font-size: var(--text-size-base);
 	line-height: 1.5;
+}
+
+section,
+article,
+.container {
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
 }
 
 a {
@@ -21,23 +28,31 @@ li {
 	font-weight: 700;
 }
 
-/* button styles */
-button,
-input[type="submit"] {
-	background-color: transparent;
-	border: none;
-	margin: 0;
-	padding: 0;
-	text-align: inherit;
-	border-radius: 0;
-	appearance: none;
+img {
+	object-fit: cover;
 }
 
-/* heading styles */
-/* h1,
-h2 {
-	color: var(--white);
-} */
+/* BUTTONS */
+
+button,
+input[type="submit"],
+a.btn {
+	/* BUTTON THEME DEFAULT */
+	--btn-bg: var(--brand-color);
+	--btn-label: var(--text-color-white);
+
+	display: grid;
+	place-content: center;
+	padding: var(--spacing-2xs) var(--spacing-s);
+	background-color: var(--btn-bg);
+	color: var(--btn-label);
+	border-radius: var(--border-radius);
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+	cursor: pointer;
+	transition: var(--transition);
+}
 
 .text-sm {
 	font-size: var(--text-size-sm);
@@ -77,24 +92,30 @@ h2 {
 /* COMPONENTS */
 
 .card {
-	display: grid;
-	gap: var(--spacing-s);
 	padding: var(--spacing-s);
-	max-width: var(--max-width-sm);
 	background-color: var(--white);
 	border-radius: var(--border-radius);
 	border: 0.5px solid var(--light-grey);
 	transition: var(--transition);
 
+	&.grid {
+		gap: var(--spacing-xs) 0;
+	}
 	&:hover {
 		box-shadow: var(--box-shadow-md);
 	}
 
 	img {
 		background-color: white;
+		aspect-ratio: 3/4;
+		object-fit: contain;
 		padding: var(--spacing-s);
-		aspect-ratio: 2/3;
-		/* max-height: 20rem; */
+		border-radius: var(--border-radius);
+	}
+
+	> div {
+		align-items: center;
+		justify-content: space-between;
 	}
 }
 

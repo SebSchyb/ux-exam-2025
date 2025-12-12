@@ -1,60 +1,48 @@
-main {
-    max-width: 1120px;
-    margin: auto;
-    padding: 2rem;
-}
-
-#userList {
-    padding: 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem 0.75rem;
+ul {
+	padding: var(--spacing-l) 0;
+	justify-content: center;
+	gap: var(--spacing-l) var(--spacing-xs);
 }
 
 span.error {
-    color: var(--brand-color);
-    font-size: var(--text-size-sm);
+	color: var(--brand-color);
+	font-size: var(--text-size-sm);
 }
 
 form {
-    display: grid;
-    gap: 1rem 0;
-    padding: 2.5rem 3rem;
-    margin: 1rem auto;
-    max-width: 500px;
-    border: 1px solid var(--brand-color);
+	display: grid;
+	gap: 1rem 0;
+	padding: 2.5rem 3rem;
+	margin: 1rem auto;
+	max-width: 500px;
+	border: 1px solid var(--brand-color);
 
-    legend {
-        font-size: var(--text-size-lg);
-        font-weight: 600;
-    }
+	legend {
+		font-size: var(--text-size-lg);
+		font-weight: 600;
+	}
 
-    label {
-        display: grid;
-        gap: 0.25rem 1rem;
+	label {
+		display: grid;
+		gap: 0.25rem 1rem;
 
-        input {
-            padding: 0.15rem 0.5rem;
-        }
+		input {
+			padding: 0.15rem 0.5rem;
+		}
 
-        input.error {
-            border: 1px solid var(--brand-color);
-        }
-    }
+		input.error {
+			border: 1px solid var(--brand-color);
+		}
+	}
 
-    a.userReset {
-        color: var(--dark-grey);
-        font-weight: 500;
-        font-size: var(--text-size-sm);
-        transition: color 0.15s ease-in;
+	a.userReset {
+		color: var(--dark-grey);
+		font-weight: 500;
+		font-size: var(--text-size-sm);
+		transition: color 0.15s ease-in;
 
-        &:hover {
-            color: var(--light-grey);
-        }
-    }
-}
-
-.hide {
-    display: none;
+		&:hover {
+			color: var(--light-grey);
+		}
+	}
 }

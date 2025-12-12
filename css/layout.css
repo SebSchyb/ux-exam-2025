@@ -1,14 +1,19 @@
-body {
+body > header,
+body > main,
+body > footer {
 	.container {
-		width: 100%;
 		max-width: var(--max-width-xl);
-		padding: 0 var(--padding-base);
-		margin: 0 auto;
+		padding-inline: var(--spacing-s-m);
+		margin-inline: auto;
+	}
 
-		.row {
-			display: flex;
+	.row {
+		display: flex;
+		gap: var(--spacing-m) var(--spacing-s);
+		/* margin: 0 var(--spacing-s); */
+
+		&.wrap {
 			flex-wrap: wrap;
-			margin: 0 var(--margin-base-negative);
 		}
 	}
 
@@ -20,10 +25,33 @@ body {
 
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(
-			auto-fill,
-			minmax(var(--max-width-sm), 1fr)
-		);
 		gap: var(--spacing-m) var(--spacing-s);
+
+		&.col-2 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&.col-3 {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		&.col-sm {
+			grid-template-columns: repeat(
+				auto-fill,
+				minmax(var(--max-width-xs), 1fr)
+			);
+		}
+
+		&.align-rows {
+			grid-auto-rows: auto;
+
+			> .grid {
+				grid-template-rows: subgrid;
+
+				.row-4 & {
+					grid-row: span 4;
+				}
+			}
+		}
 	}
 }

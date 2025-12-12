@@ -13,14 +13,17 @@ const renderItemList = async (category) => {
 		const title = item.title;
 		const image = item.image;
 		const category = item.category;
-		const description = item.description;
-		const price = item.price;
-		// console.log(title);
+		const price = new Intl.NumberFormat("dk-DK", {
+			style: "currency",
+			currency: "DKK",
+		}).format(item.price);
+
+		console.log(price);
+
 		clone.querySelector("h4.title").textContent = title;
 		clone.querySelector("img").src = image;
 		clone.querySelector("p.category").textContent = category;
-		clone.querySelector("p.description").textContent = description;
-		clone.querySelector("p.price span").textContent = price;
+		clone.querySelector("p.price").textContent = price;
 		container.appendChild(clone);
 	});
 };
@@ -49,7 +52,9 @@ const id = params.get("id");
 if (id) {
 	getItemById(id).then(renderSingleItem);
 } else {
-	console.error("No ID found in URL");
-	document.querySelector("#single-product-container").textContent =
-		"No item found";
+	// console.error("No ID found in URL");
+	// document.querySelector("#single-product-container").textContent =
+	// 	"No item found";
+
+	await renderItemList("/products");
 }
