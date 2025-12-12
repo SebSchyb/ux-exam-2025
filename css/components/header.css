@@ -1,4 +1,4 @@
-body > header {
+/* body > header {
 	cursor: default;
 
 	.container {
@@ -23,7 +23,7 @@ body > header {
 			display: none;
 		}
 	}
-}
+} */
 .site-header .header-top {
   align-items: center;
   justify-content: space-between;
