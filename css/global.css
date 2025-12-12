@@ -92,11 +92,18 @@ a.btn {
 /* COMPONENTS */
 
 .card {
+	position: relative;
 	padding: var(--spacing-s);
 	background-color: var(--white);
 	border-radius: var(--border-radius);
 	border: 0.5px solid var(--light-grey);
 	transition: var(--transition);
+
+	a::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+	}
 
 	&.grid {
 		gap: var(--spacing-xs) 0;

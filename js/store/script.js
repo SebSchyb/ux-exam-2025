@@ -20,7 +20,7 @@ const renderItemList = async (category) => {
 
 		console.log(price);
 
-		clone.querySelector("h4.title").textContent = title;
+		clone.querySelector("h4.title a").textContent = title;
 		clone.querySelector("img").src = image;
 		clone.querySelector("p.category").textContent = category;
 		clone.querySelector("p.price").textContent = price;
