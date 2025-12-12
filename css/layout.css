@@ -10,18 +10,11 @@ body > footer {
 	.row {
 		display: flex;
 		gap: var(--spacing-m) var(--spacing-s);
-		/* margin: 0 var(--spacing-s); */
 
 		&.wrap {
 			flex-wrap: wrap;
 		}
 	}
-
-	/* .grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1rem;
-} */
 
 	.grid {
 		display: grid;

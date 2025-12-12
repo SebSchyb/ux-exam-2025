@@ -2,7 +2,7 @@
 
 body {
 	--bg-clr-main: none;
-	--text-color-main: var(--text-color-black);
+	--text-color-main: var(--color-neutral-800);
 }
 
 header,
@@ -14,8 +14,14 @@ article,
 	color: var(--text-clr-main);
 
 	&[data-theme="primary"] {
-		--bg-clr-main: var(--brand-color);
-		--text-clr-main: var(--text-color-white);
+		--bg-clr-main: var(--color-brand-400);
+		--text-clr-main: var(--color-neutral-50);
+	}
+
+	&[data-theme="card"] {
+		--bg-clr-main: var(--color-neutral-50);
+		--text-clr-main: var(--color-neutral-800);
+		--border-clr: var(--color-neutral-300);
 	}
 }
 
@@ -23,23 +29,19 @@ button,
 input[type="submit"],
 a.btn {
 	&[data-theme="primary"] {
-		--btn-bg: var(--brand-color);
-		--btn-label: var(--text-color-white);
+		--btn-bg: var(--color-brand-500);
+		--btn-label: var(--color-neutral-50);
 
 		&:hover {
-			--btn-bg: oklch(
-				from var(--brand-color) calc(l - 0.1) calc(c + 0.1) h
-			);
+			--btn-bg: var(--color-brand-400);
 		}
 	}
 	&[data-theme="secondary"] {
-		--btn-bg: var(--dark-grey);
-		--btn-label: var(--text-color-white);
+		--btn-bg: var(--color-neutral-900);
+		--btn-label: var(--color-neutral-50);
 
 		&:hover {
-			--btn-bg: oklch(
-				from var(--dark-grey) calc(l - 0.1) calc(c + 0.1) h
-			);
+			--btn-bg: var(--color-neutral-800);
 		}
 	}
 }
