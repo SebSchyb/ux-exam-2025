@@ -107,7 +107,7 @@ a.btn {
     header {
         position: relative;
         .category {
-            text-transform: capitalize;
+            text-transform: uppercase;
             position: absolute;
             top: -3rem;
             left: 1rem;
