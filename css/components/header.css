@@ -1,5 +1,4 @@
 body > header {
-	padding: var(--spacing-m) 0;
 	cursor: default;
 
 	.container {
@@ -24,4 +23,47 @@ body > header {
 			display: none;
 		}
 	}
+}
+.site-header .header-top {
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--spacing-s-m);
+}
+
+.site-header .header-actions {
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-s);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  max-width: 10rem;
+}
+
+.cart:hover {
+  background: var(--neutral-100);
+}
+
+a.btn {
+  text-transform: none;
+}
+
+.navstrip {
+  background: var(--dark-grey); 
+}
+
+.navlinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-block: var(--spacing-xs-s);
+  gap: var(--spacing-l);
+  justify-content: start;
+}
+
+.navlinks a {
+  color: var(--text-color-white);
+  font-weight: 500;
 }
