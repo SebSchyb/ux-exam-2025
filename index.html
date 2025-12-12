@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<script type="module" src="js/store/script.js"></script>
-		<script type="module" src="js/auth/script.js"></script>
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/components/form.css" />
-		<link rel="stylesheet" href="css/components/authHeader.css" />
-	</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script type="module" src="js/store/script.js"></script>
+        <script type="module" src="js/auth/script.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/components/form.css" />
+        <link rel="stylesheet" href="css/components/authHeader.css" />
+    </head>
 
-	<body>
-		<header>
-			<div class="container row">
-				<h1>Title</h1>
-				<div id="auth">
-					<p id="userStatus"></p>
-					<button id="signOutBtn" class="btn secondary">
-						Sign Out
-					</button>
-				</div>
-				<nav id="public">
-					<a href="/login.html" class="btn" data-theme="primary"
-						>Sign In</a
-					>
-					<a href="/signup.html" class="btn" data-theme="secondary"
-						>Register</a
-					>
-				</nav>
-			</div>
-		</header>
-		<main>
-			<section data-theme="primary">
-				<ul id="userList" class="container row wrap">
-					<template>
-						<li>
-							<p></p>
-						</li>
-					</template>
-				</ul>
-			</section>
-			<section
-				class="container grid col-sm align-rows row-4"
-				id="item-list"
-			>
-				<template>
-					<article class="grid card">
-						<img src="image 3.png" alt="" />
-						<header>
-							<h4 class="title">
-								Fjallraven - Foldsack No. 1 Backpack, Fits 15
-								Laptops
-							</h4>
-							<p class="category">men's clothing</p>
-						</header>
-						<div class="row">
-							<p class="price">DKK</p>
-							<button>Add to cart</button>
-						</div>
-					</article>
-				</template>
-			</section>
-		</main>
-	</body>
+    <body>
+        <header>
+            <div class="container row">
+                <h1>Title</h1>
+                <div id="auth">
+                    <p id="userStatus"></p>
+                    <button id="signOutBtn" class="btn secondary">
+                        Sign Out
+                    </button>
+                </div>
+                <nav id="public">
+                    <a href="/login.html" class="btn" data-theme="primary"
+                        >Sign In</a
+                    >
+                    <a href="/signup.html" class="btn" data-theme="secondary"
+                        >Register</a
+                    >
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section data-theme="primary">
+                <ul id="userList" class="container row wrap">
+                    <template>
+                        <li>
+                            <p></p>
+                        </li>
+                    </template>
+                </ul>
+            </section>
+            <section
+                class="container grid col-sm align-rows row-4"
+                id="item-list"
+            >
+                <template>
+                    <article class="grid card">
+                        <img src="image 3.png" alt="" />
+                        <header>
+                            <h4 class="title">
+                                Fjallraven - Foldsack No. 1 Backpack, Fits 15
+                                Laptops
+                            </h4>
+                            <p class="category">men's clothing</p>
+                        </header>
+                        <div class="row">
+                            <p class="description"></p>
+                        </div>
+                        <div class="row">
+                            <p class="price">DKK</p>
+                            <button>Add to cart</button>
+                        </div>
+                    </article>
+                </template>
+            </section>
+        </main>
+    </body>
 </html>

@@ -4,32 +4,32 @@
 @import "layout.css";
 
 body {
-	background-color: var(--bg-clr-main);
-	color: var(--text-clr-main);
-	font-family: var(--body-font);
-	font-size: var(--text-size-base);
-	line-height: 1.5;
+    background-color: var(--bg-clr-main);
+    color: var(--text-clr-main);
+    font-family: var(--body-font);
+    font-size: var(--text-size-base);
+    line-height: 1.5;
 }
 
 section,
 article,
 .container {
-	background-color: var(--bg-clr-main);
-	color: var(--text-clr-main);
+    background-color: var(--bg-clr-main);
+    color: var(--text-clr-main);
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 a,
 li {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 img {
-	object-fit: cover;
+    object-fit: cover;
 }
 
 /* BUTTONS */
@@ -37,90 +37,96 @@ img {
 button,
 input[type="submit"],
 a.btn {
-	/* BUTTON THEME DEFAULT */
-	--btn-bg: var(--brand-color);
-	--btn-label: var(--text-color-white);
+    /* BUTTON THEME DEFAULT */
+    --btn-bg: var(--brand-color);
+    --btn-label: var(--text-color-white);
 
-	display: grid;
-	place-content: center;
-	padding: var(--spacing-2xs) var(--spacing-s);
-	background-color: var(--btn-bg);
-	color: var(--btn-label);
-	border-radius: var(--border-radius);
-	text-transform: uppercase;
-	text-align: center;
-	font-weight: 600;
-	cursor: pointer;
-	transition: var(--transition);
+    display: grid;
+    place-content: center;
+    padding: var(--spacing-2xs) var(--spacing-s);
+    background-color: var(--btn-bg);
+    color: var(--btn-label);
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .text-sm {
-	font-size: var(--text-size-sm);
-	line-height: var(--leading-relaxed);
+    font-size: var(--text-size-sm);
+    line-height: var(--leading-relaxed);
 }
 
 .text-base {
-	font-size: var(--text-size-base);
-	line-height: var(--leading-normal);
+    font-size: var(--text-size-base);
+    line-height: var(--leading-normal);
 }
 
 .text-lg {
-	font-size: var(--text-size-lg);
-	line-height: var(--leading-normal);
+    font-size: var(--text-size-lg);
+    line-height: var(--leading-normal);
 }
 
 .text-xl {
-	font-size: var(--text-size-xl);
-	line-height: var(--leading-snug);
+    font-size: var(--text-size-xl);
+    line-height: var(--leading-snug);
 }
 
 .text-2xl {
-	font-size: var(--text-size-2xl);
-	line-height: var(--leading-snug);
+    font-size: var(--text-size-2xl);
+    line-height: var(--leading-snug);
 }
 
 .text-3xl {
-	font-size: var(--text-size-3xl);
-	line-height: var(--leading-tight);
+    font-size: var(--text-size-3xl);
+    line-height: var(--leading-tight);
 }
 
 .text-4xl {
-	font-size: var(--text-size-4xl);
-	line-height: var(--leading-tight);
+    font-size: var(--text-size-4xl);
+    line-height: var(--leading-tight);
 }
 
 /* COMPONENTS */
 
 .card {
-	padding: var(--spacing-s);
-	background-color: var(--white);
-	border-radius: var(--border-radius);
-	border: 0.5px solid var(--light-grey);
-	transition: var(--transition);
+    padding: var(--spacing-s);
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    border: 0.5px solid var(--light-grey);
+    transition: var(--transition);
 
-	&.grid {
-		gap: var(--spacing-xs) 0;
-	}
-	&:hover {
-		box-shadow: var(--box-shadow-md);
-	}
+    &.grid {
+        gap: var(--spacing-xs) 0;
+    }
+    &:hover {
+        box-shadow: var(--box-shadow-md);
+    }
+    p.description {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: <number>;
+    }
 
-	img {
-		background-color: white;
-		aspect-ratio: 3/4;
-		object-fit: contain;
-		padding: var(--spacing-s);
-		border-radius: var(--border-radius);
-	}
+    img {
+        background-color: white;
+        aspect-ratio: 3/4;
+        object-fit: contain;
+        padding: var(--spacing-s);
+        border-radius: var(--border-radius);
+    }
 
-	> div {
-		align-items: center;
-		justify-content: space-between;
-	}
+    > div {
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 /* UTILITIES */
 
 .hide {
-	display: none;
+    display: none;
 }
