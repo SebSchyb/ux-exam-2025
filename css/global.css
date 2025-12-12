@@ -94,7 +94,6 @@ a.btn {
 	border-radius: var(--border-radius);
 	border: 0.5px solid var(--border-clr);
 	transition: var(--transition);
-	cursor: pointer;
 
 	a::after {
 		content: "";
