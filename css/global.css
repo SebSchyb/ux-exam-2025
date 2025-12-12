@@ -104,11 +104,22 @@ a.btn {
     &:hover {
         box-shadow: var(--box-shadow-md);
     }
+    header {
+        position: relative;
+        .category {
+            text-transform: capitalize;
+            position: absolute;
+            top: -3rem;
+            left: 1rem;
+        }
+    }
+
     p.description {
         overflow: hidden;
         display: -webkit-box;
+        line-clamp: 3;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: <number>;
+        -webkit-line-clamp: 3;
     }
 
     img {
@@ -126,6 +137,14 @@ a.btn {
 }
 
 /* UTILITIES */
+
+.pill {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    width: fit-content;
+    border-radius: var(--border-radius);
+    padding: var(--padding-xs) var(--padding-md);
+}
 
 .hide {
     display: none;
