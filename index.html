@@ -9,25 +9,51 @@
 	<script type="module" src="js/auth/script.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/components/form.css" />
-	<link rel="stylesheet" href="css/components/authHeader.css" />
+	<link rel="stylesheet" href="css/components/header.css">
 </head>
 
 <body>
-	<header>
-		<div class="container row">
-			<h1>Title</h1>
-			<div id="auth">
-				<p id="userStatus"></p>
-				<button id="signOutBtn" class="btn secondary">
-					Sign Out
-				</button>
+	<header class="site-header">
+			<div class="container">
+				<div class="row header-top">
+					<a class="brand" href="/" aria-label="Home">
+						<img src="assets/images/logo.svg" alt="Logo" />
+					</a>
+
+					<div class="row header-actions">
+						<a class="cart" href="/cart" aria-label="Cart">
+							<svg
+								viewBox="0 0 24 24"
+								width="28"
+								height="28"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path d="M6 7h12l-1 14H7L6 7Z"></path>
+								<path d="M9 7a3 3 0 0 1 6 0"></path>
+							</svg>
+						</a>
+
+						<a class="btn" data-theme="primary" href="/signin"
+							>Sign in</a
+						>
+						<a class="btn" data-theme="secondary" href="/register"
+							>Register</a
+						>
+					</div>
+				</div>
 			</div>
-			<nav id="public">
-				<a href="/login.html" class="btn" data-theme="primary">Sign In</a>
-				<a href="/signup.html" class="btn" data-theme="secondary">Register</a>
+
+			<nav class="navstrip" aria-label="Primary">
+				<ul class="container row navlinks">
+					<li><a href="/women">Women's clothing</a></li>
+					<li><a href="/men">Men's clothing</a></li>
+					<li><a href="/electronics">Electronics</a></li>
+					<li><a href="/jewelry">Jewelery</a></li>
+				</ul>
 			</nav>
-		</div>
-	</header>
+		</header>
 	<main>
 		<section data-theme="primary">
 			<ul id="userList" class="container row wrap">

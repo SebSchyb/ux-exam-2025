@@ -71,6 +71,9 @@
 
 	--border-radius: 0.5rem;
 
+	--max-width-4xs: 120px;
+	--max-width-3xs: 160px;
+	--max-width-2xs: 220px;
 	--max-width-xs: 264px;
 	--max-width-sm: 320px;
 	--max-width-md: 600px;
