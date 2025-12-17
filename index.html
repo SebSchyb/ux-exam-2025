@@ -13,57 +13,116 @@
 </head>
 
 <body>
-	<header class="site-header">
-			<div class="container">
-				<div class="row header-top">
-					<a class="brand" href="/" aria-label="Home">
-						<img src="assets/images/logo.svg" alt="Logo" />
-					</a>
-
-					<div class="row header-actions">
-						<a class="cart" href="/cart" aria-label="Cart">
-							<svg
-								viewBox="0 0 24 24"
-								width="28"
-								height="28"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							>
-								<path d="M6 7h12l-1 14H7L6 7Z"></path>
-								<path d="M9 7a3 3 0 0 1 6 0"></path>
-							</svg>
-						</a>
-
-						<a class="btn" data-theme="primary" href="/signin"
-							>Sign in</a
+	<header>
+			<div class="container row header-top">
+				<a class="brand" href="/" aria-label="Home">
+					<img src="assets/images/logo.svg" alt="Logo" />
+				</a>
+				<div class="row header-actions">
+					<button
+						id="shoppingCartOpenButton"
+						aria-label="Shopping cart"
+						data-theme="none"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="28"
+							height="28"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
 						>
-						<a class="btn" data-theme="secondary" href="/register"
-							>Register</a
-						>
-					</div>
+							<path d="M6 7h12l-1 14H7L6 7Z"></path>
+							<path d="M9 7a3 3 0 0 1 6 0"></path>
+						</svg>
+					</button>
+
+					<a class="btn" data-theme="primary" href="/signin.html"
+						>Sign in</a
+					>
+					<a class="btn" data-theme="secondary" href="/register.html"
+						>Register</a
+					>
 				</div>
 			</div>
-
-			<nav class="navstrip" aria-label="Primary">
-				<ul class="container row navlinks">
-					<li><a href="/women">Women's clothing</a></li>
-					<li><a href="/men">Men's clothing</a></li>
-					<li><a href="/electronics">Electronics</a></li>
-					<li><a href="/jewelry">Jewelery</a></li>
-				</ul>
-			</nav>
+			<section id="shoppingCart">
+				<article>
+					<header>
+						<button
+							id="closeBtn"
+							aria-label="Close"
+							data-theme="none"
+						>
+							<img src="/assets/icons/x.svg" alt="Close button" />
+						</button>
+						<h2 class="text-lg">Shopping cart</h2>
+					</header>
+					<p class="text-sm empty"></p>
+					<ul></ul>
+					<template>
+						<li class="row">
+							<img src="image 3.png" alt="" />
+							<article class="text-sm">
+								<h3>Mens Casual Premium Slim Fit T-Shirts</h3>
+								<button
+									class="removeProductBtn"
+									data-theme="none"
+								>
+									remove product
+								</button>
+								<header></header>
+								<footer class="row">
+									<div class="counter">
+										<button
+											class="dec"
+											aria-label="Decrease quantity"
+											data-theme="secondary"
+										>
+											-
+										</button>
+										<input inputmode="numeric" />
+										<button
+											class="inc"
+											aria-label="Increase quantity"
+											data-theme="secondary"
+										>
+											+
+										</button>
+									</div>
+									<p>DKK</p>
+								</footer>
+							</article>
+						</li>
+					</template>
+				</article>
+				<footer>
+					<p class="text-sm">
+						<span>Shipping:</span>
+						<span class="bold">DKK 67.00</span>
+					</p>
+					<p class="bold">
+						<span>Total:</span>
+						<span class="total"></span>
+					</p>
+					<button>Check out now</button>
+				</footer>
+			</section>
 		</header>
-	<main>
-		<section data-theme="primary">
-			<ul id="userList" class="container row wrap">
-				<template>
-					<li>
-						<p></p>
-					</li>
-				</template>
+		<nav aria-label="Primary" data-theme="dark">
+			<ul class="container row navlinks">
+				<li>
+					<a href="?category=women%27s%20clothing"
+						>Women's Clothing</a
+					>
+				</li>
+				<li>
+					<a href="?category=men%27s%20clothing">Men's Clothing</a>
+				</li>
+				<li><a href="?category=jewelery">Jewelery</a></li>
+				<li><a href="?category=electronics">Electronics</a></li>
 			</ul>
-		</section>
+		</nav>
+	<main>
 		<section class="container grid col-sm align-rows row-4" id="item-list">
 			<template>
 				<article class="grid card" data-theme="card">
