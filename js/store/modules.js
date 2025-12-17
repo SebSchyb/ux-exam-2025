@@ -183,12 +183,3 @@ function increaseProductQuantity(e, product) {
 
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
 }
-export const getItemList = async () => {
-	const response = await fetch(`${STOREBASEURL}/products`);
-	return response.json();
-};
-
-export const getItemById = async (id) => {
-	const res = await fetch(`${STOREBASEURL}/products/${id}`);
-	return res.json();
-};
