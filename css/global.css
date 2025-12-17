@@ -131,6 +131,10 @@ a.btn {
 	}
 }
 
+#item-list {
+	padding-block: var(--spacing-xl);
+}
+
 /* UTILITIES */
 
 .pill {

@@ -9,3 +9,7 @@ export function currency(num) {
 		currency: "DKK",
 	}).format(num);
 }
+
+export function sumCartTotal(init, num) {
+	return init + 67 + num;
+}
