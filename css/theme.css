@@ -50,6 +50,14 @@ a.btn {
 			--btn-bg: var(--color-neutral-800);
 		}
 	}
+
+	&[data-theme="none"] {
+		--btn-bg: transparent;
+		--btn-label: var(--color-neutral-900);
+		&:hover {
+			--btn-label: var(--color-neutral-600);
+		}
+	}
 	&[data-theme="buhovershakeyflipexplode"] {
 		--btn-bg: var(--color-neutral-50);
 		--btn-label: var(--color-neutral-900);
