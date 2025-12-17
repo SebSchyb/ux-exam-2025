@@ -1,5 +1,5 @@
 import { getItemList } from "./api.js";
-import { getCart, currency } from "./utils.js";
+import { getCart, currency, sumCartTotal } from "./utils.js";
 
 export const renderItemList = async (category) => {
 	const container = document.querySelector("#item-list");
@@ -109,7 +109,10 @@ export function loadCartProducts(cart) {
 			cartItem.querySelector("footer p").textContent = currency(
 				product.price * product.quantity
 			);
-			cartTotal = cartTotal + 67 + product.price * product.quantity;
+			cartTotal = sumCartTotal(
+				cartTotal,
+				product.price * product.quantity
+			);
 
 			cartItem
 				.querySelector(".removeProductBtn")
