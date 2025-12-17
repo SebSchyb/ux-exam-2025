@@ -1,136 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script type="module" src="js/auth/script.js"></script>
+		<script type="module" src="js/store/script.js"></script>
+		<script type="module" src="js/store/checkout.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/components/form.css" />
+		<link rel="stylesheet" href="css/components/header.css" />
+		<link rel="stylesheet" href="css/components/hero.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script type="module" src="js/store/script.js"></script>
-    <script type="module" src="js/auth/script.js"></script>
-    <script type="module" src="js/store/checkout.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/components/form.css" />
-    <link rel="stylesheet" href="css/components/header.css" />
-    <link rel="stylesheet" href="css/components/hero.css" />
+	<body>
+		<header>
+			<div class="container row header-top">
+				<a class="brand" href="/" aria-label="Home">
+					<img src="assets/images/logo.svg" alt="Logo" />
+				</a>
+				<div class="row header-actions">
+					<a class="btn" data-theme="primary" href="/signin.html"
+						>Sign in</a
+					>
+					<a class="btn" data-theme="secondary" href="/register.html"
+						>Register</a
+					>
+				</div>
+			</div>
+		</header>
+		<nav aria-label="Primary" data-theme="dark">
+			<ul class="container row navlinks">
+				<li>
+					<a href="/shop.html?category=women%27s%20clothing"
+						>Women's Clothing</a
+					>
+				</li>
+				<li>
+					<a href="/shop.html?category=men%27s%20clothing"
+						>Men's Clothing</a
+					>
+				</li>
+				<li><a href="/shop.html?category=jewelery">Jewellery</a></li>
+				<li>
+					<a href="/shop.html?category=electronics">Electronics</a>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<header>
+				<h1>Checkout</h1>
+			</header>
+			<section>
+				<div id="checkout-items"></div>
+				<article>
+					<template id="checkout-item-template">
+						<div class="checkout-item">
+							<span class="title"></span>
+							<span class="quantity"></span>
+							<span class="price"></span>
+						</div>
+					</template>
+				</article>
+				<article>
+					<template id="checkout-summary-template">
+						<div class="checkout-summary">
+							<div class="items-total"></div>
+							<div class="shipping"></div>
+							<strong class="grand-total"></strong>
+						</div>
+					</template>
+				</article>
+			</section>
+			<section>
+				<form id="checkout-form" method="post" action="/checkout">
+					<fieldset>
+						<legend>Billing Information</legend>
 
-</head>
+						<label>
+							Full Name
+							<input type="text" name="full_name" required />
+						</label>
 
-<body>
-    <header>
-        <div class="container row header-top">
-            <a class="brand" href="/" aria-label="Home">
-                <img src="assets/images/logo.svg" alt="Logo" />
-            </a>
-            <div class="row header-actions">
-                <a class="btn" data-theme="primary" href="/signin.html">Sign in</a>
-                <a class="btn" data-theme="secondary" href="/register.html">Register</a>
-            </div>
-        </div>
-    </header>
-    <nav aria-label="Primary" data-theme="dark">
-        <ul class="container row navlinks">
-            <li>
-                <a href="/shop.html?category=women%27s%20clothing">Women's Clothing</a>
-            </li>
-            <li>
-                <a href="/shop.html?category=men%27s%20clothing">Men's Clothing</a>
-            </li>
-            <li><a href="/shop.html?category=jewelery">Jewellery</a></li>
-            <li>
-                <a href="/shop.html?category=electronics">Electronics</a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <header>
-            <h1>Checkout</h1>
-        </header>
-        <section>
-            <div id="checkout-items"></div>
-            <article>
-                <template id="checkout-item-template">
-                    <div class="checkout-item">
-                        <span class="title"></span>
-                        <span class="quantity"></span>
-                        <span class="price"></span>
-                    </div>
-                </template>
-            </article>
-            <article>
-                <template id="checkout-summary-template">
-                    <div class="checkout-summary">
-                        <div class="items-total"></div>
-                        <div class="shipping"></div>
-                        <strong class="grand-total"></strong>
-                    </div>
-                </template>
-            </article>
-        </section>
-        <section>
-            <form id="checkout-form" method="post" action="/checkout">
+						<label>
+							Email Address
+							<input type="email" name="email" required />
+						</label>
 
-                <fieldset>
-                    <legend>Billing Information</legend>
+						<label>
+							Billing Address
+							<input type="text" name="address" required />
+						</label>
+						<label>
+							Delivery Address
+							<input type="text" name="address" required />
+						</label>
 
-                    <label>
-                        Full Name
-                        <input type="text" name="full_name" required>
-                    </label>
+						<label>
+							City
+							<input type="text" name="city" required />
+						</label>
 
-                    <label>
-                        Email Address
-                        <input type="email" name="email" required>
-                    </label>
+						<label>
+							ZIP / Postal Code
+							<input type="text" name="zip" required />
+						</label>
+					</fieldset>
 
-                    <label>
-                        Billing Address
-                        <input type="text" name="address" required>
-                    </label>
-                    <label>
-                        Delivery Address
-                        <input type="text" name="address" required>
-                    </label>
+					<fieldset>
+						<div class="card-details">
+							<legend>Payment Details</legend>
+							<label>
+								Cardholder Name
+								<input
+									type="text"
+									placeholder="Jesse Pinkman"
+									name="card_name"
+									autocomplete="cc-name"
+									required
+								/>
+							</label>
 
-                    <label>
-                        City
-                        <input type="text" name="city" required>
-                    </label>
+							<label>
+								Card Number
+								<input
+									type="text"
+									name="card_number"
+									inputmode="numeric"
+									autocomplete="cc-number"
+									placeholder="1234 5678 9012 3456"
+									required
+								/>
+							</label>
 
-                    <label>
-                        ZIP / Postal Code
-                        <input type="text" name="zip" required>
-                    </label>
-                </fieldset>
+							<label>
+								CVV
+								<input
+									type="text"
+									name="card_cvv"
+									inputmode="numeric"
+									autocomplete="cc-csc"
+									placeholder="123"
+									required
+								/>
+							</label>
+						</div>
+					</fieldset>
 
-                <fieldset>
-                    <div class="card-details">
-                        <legend>Payment Details</legend>
-                        <label>
-                            Cardholder Name
-                            <input type="text" placeholder="Jesse Pinkman" name="card_name" autocomplete="cc-name"
-                                required>
-                        </label>
-
-                        <label>
-                            Card Number
-                            <input type="text" name="card_number" inputmode="numeric" autocomplete="cc-number"
-                                placeholder="1234 5678 9012 3456" required>
-                        </label>
-
-                        <label>
-                            CVV
-                            <input type="text" name="card_cvv" inputmode="numeric" autocomplete="cc-csc"
-                                placeholder="123" required>
-                        </label>
-                    </div>
-                </fieldset>
-
-                <button id="place_order" type="button">Place Order</button>
-
-            </form>
-        </section>
-    </main>
-
-</body>
-
+					<button id="place_order" type="button">Place Order</button>
+				</form>
+			</section>
+		</main>
+	</body>
 </html>
