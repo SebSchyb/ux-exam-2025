@@ -10,9 +10,10 @@ import { isLoginPage, isSignUpPage } from "./variables.js";
 const pageForm = document.querySelector("form");
 
 // AUTH COMPONENTS
+const headerActions = document.querySelector("header .header-actions");
+
 const authHeader = document.querySelector("#auth");
 const publicHeader = document.querySelector("#public");
-const SignOutButton = document.querySelector("#signOutBtn");
 const UserStatus = document.querySelector("#userStatus");
 
 // LOCAL STORAGE
@@ -53,16 +54,26 @@ if (isLoginPage || isSignUpPage) {
 	// IF A USER IS CURRENTLY SIGNED IN
 
 	// display auth-scoped UI
-	publicHeader.classList.add("hide");
+	headerActions.appendChild(`
+		<button data-theme="secondary" id="signOutBtn">Sign out</button>`);
+
+	const SignOutButton = document.querySelector("#signOutBtn");
 	UserStatus.textContent = authUser;
 
 	// display sign out button
 	SignOutButton.addEventListener("click", signOut);
-
-	// display registered users (for testing purposes)
-	await displayUserList();
 } else {
 	// PUBLIC PAGES: hide auth-scoped content when a user is not currently signed in
+
+	const test = `<a class="btn" data-theme="primary" href="/signin.html"
+						>Sign in</a
+					>
+					<a class="btn" data-theme="secondary" href="/register.html"
+						>Register</a
+					>`;
+
+	headerActions.append(test);
+
 	// authHeader.classList.add("hide");
 	// UserStatus.classList.add("hide");
 	// SignOutButton.classList.add("hide");
