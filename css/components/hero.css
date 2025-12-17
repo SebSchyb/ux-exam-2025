@@ -4,7 +4,7 @@
     background:
     var(--hero-overlay),
     url('../../assets/images/hero.png');
-    height: 300px;
+    height: calc(var(--spacing-3xl)*5);
     display: flex;
     background-position: center;
         justify-content: center;
