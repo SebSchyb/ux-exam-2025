@@ -110,52 +110,41 @@
 		<nav aria-label="Primary" data-theme="dark">
 			<ul class="container row navlinks">
 				<li>
-					<a href="?category=women%27s%20clothing"
+					<a href="/shop.html?category=women%27s%20clothing"
 						>Women's Clothing</a
 					>
 				</li>
 				<li>
-					<a href="?category=men%27s%20clothing">Men's Clothing</a>
+					<a href="/shop.html?category=men%27s%20clothing"
+						>Men's Clothing</a
+					>
 				</li>
-				<li><a href="?category=jewelery">Jewelery</a></li>
-				<li><a href="?category=electronics">Electronics</a></li>
+				<li><a href="/shop.html?category=jewelery">Jewellery</a></li>
+				<li>
+					<a href="/shop.html?category=electronics">Electronics</a>
+				</li>
 			</ul>
 		</nav>
 		<main>
-			<section data-theme="primary">
-				<ul id="userList" class="container row wrap">
-					<template>
-						<li>
-							<p></p>
-						</li>
-					</template>
-				</ul>
-			</section>
-			<section
-				class="container grid col-sm align-rows row-4"
-				id="item-list"
-			>
-				<template>
-					<article class="grid card">
+			<section class="container grid col-sm align-rows row-4" id="item-list">
+			<template>
+				<article class="grid card" data-theme="card">
+					<figure>
 						<img src="image 3.png" alt="" />
-						<header>
-							<h4 class="title">
-								<a href="/">
-									Fjallraven - Foldsack No. 1 Backpack, Fits
-									15 Laptops
-								</a>
-							</h4>
-							<p class="category pill text-sm">men's clothing</p>
-						</header>
-						<div class="row">
-							<p class="description"></p>
-						</div>
-						<div class="row">
-							<p class="price">DKK</p>
-						</div>
-					</article>
-				</template>
-			</section>
+						<figcaption class="category pill text-sm">men's clothing</figcaption>
+					</figure>
+					<header>
+						<h4 class="title">
+							<a href="/">
+								Fjallraven - Foldsack No. 1 Backpack, Fits
+								15 Laptops
+							</a>
+						</h4>
+					</header>
+					<p class="description"></p>
+					<p class="price">DKK</p>
+			</template>
+		</section>
 		</main>
 	</body>
 </html>

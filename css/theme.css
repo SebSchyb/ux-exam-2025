@@ -35,7 +35,7 @@ button,
 input[type="submit"],
 a.btn {
 	&[data-theme="primary"] {
-		--btn-bg: var(--color-brand-500);
+		--btn-bg: var(--color-brand-700);
 		--btn-label: var(--color-neutral-50);
 
 		&:hover {
