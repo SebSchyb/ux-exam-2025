@@ -104,7 +104,10 @@ export function loadCartProducts(cart) {
 
 			cartItem.querySelector("img").src = product.image;
 			cartItem.querySelector("img").alt = product.title;
-			cartItem.querySelector("h3").textContent = product.title;
+			cartItem.querySelector("h3 a").textContent = product.title;
+			cartItem.querySelector(
+				"h3 a"
+			).href = `/product.html?id=${product.id}`;
 			cartItem.querySelector("input").value = product.quantity;
 			cartItem.querySelector("footer p").textContent = currency(
 				product.price * product.quantity
@@ -139,16 +142,28 @@ export function loadCartProducts(cart) {
 }
 
 function removeProduct(e, product) {
+	const cartTotalDisplay = document.querySelector("#shoppingCart .total");
+	let cartTotal = 67;
+
 	const current = getCart();
 	const basket = current.filter((item) => item.id !== product.id);
+
+	basket.map((item) => {
+		return (cartTotal = cartTotal + item.quantity * item.price);
+	});
 
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
 	const productCard = e.target.parentElement.parentElement;
 	productCard.remove();
+
+	cartTotalDisplay.textContent = currency(cartTotal == 67 ? 0 : cartTotal);
 }
 
 function decreaseProductQuantity(e, product) {
 	const current = getCart();
+	const cartTotalDisplay = document.querySelector("#shoppingCart .total");
+	let cartTotal = 67;
+
 	const basket = current.map((item) => {
 		if (item.id == product.id) {
 			item.quantity = item.quantity - 1;
@@ -164,31 +179,28 @@ function decreaseProductQuantity(e, product) {
 			e.target.disabled = true;
 		}
 
+		cartTotal = cartTotal + item.quantity * item.price;
+
 		return item;
 	});
 
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
+	cartTotalDisplay.textContent = currency(cartTotal);
 }
 
-function increaseProductQuantity(e, product, currentTotal) {
-	const cartTotalDisplay = document.querySelector("#shoppingCart .total");
+function increaseProductQuantity(e, product) {
 	const current = getCart();
-	let cartTotal = currentTotal;
+	const cartTotalDisplay = document.querySelector("#shoppingCart .total");
+	let cartTotal = 67;
 
-	console.log(cartTotal);
 	const basket = current.map((item) => {
 		if (item.id == product.id) {
-			console.log("test");
-			cartTotal = cartTotal - item.quantity * item.price;
-
 			item.quantity = item.quantity + 1;
 
 			e.target.previousElementSibling.value = item.quantity;
 			e.target.parentElement.parentElement.querySelector(
 				"p"
 			).textContent = currency(item.quantity * item.price);
-
-			cartTotal = cartTotal + item.quantity * item.price;
 		}
 
 		// ENABLE DECREASE IF QUANTITY > 1
@@ -196,11 +208,11 @@ function increaseProductQuantity(e, product, currentTotal) {
 			e.target.previousElementSibling.previousElementSibling.disabled = false;
 		}
 
+		cartTotal = cartTotal + item.quantity * item.price;
+
 		return item;
 	});
-	console.log(cartTotal);
 
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
 	cartTotalDisplay.textContent = currency(cartTotal);
-	console.log(cartTotal);
 }
