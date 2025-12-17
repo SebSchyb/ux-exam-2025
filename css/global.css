@@ -180,5 +180,4 @@ a.btn {
 
 .breadcrumbs [aria-current="page"] {
     color: var(--dark-grey);
-    font-weight: 600;
 }
