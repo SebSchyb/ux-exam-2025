@@ -3,6 +3,7 @@
 body {
 	--bg-clr-main: none;
 	--text-color-main: var(--color-neutral-800);
+	--text-clr-error: var(--color-error-600);
 }
 
 header,
