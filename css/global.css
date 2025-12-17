@@ -1,26 +1,26 @@
 body {
-    background-color: var(--bg-clr-main);
-    color: var(--text-clr-main);
-    font-family: var(--body-font);
-    font-size: var(--text-size-base);
-    line-height: 1.5;
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
+	font-family: var(--body-font);
+	font-size: var(--text-size-base);
+	line-height: 1.5;
 }
 
 section,
 article,
 .container {
-    background-color: var(--bg-clr-main);
-    color: var(--text-clr-main);
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 700;
+	color: inherit;
+	text-decoration: none;
+	font-weight: 700;
 }
 
 img {
-    object-fit: cover;
+	object-fit: cover;
 }
 
 /* BUTTONS */
@@ -28,156 +28,152 @@ img {
 button,
 input[type="submit"],
 a.btn {
-    /* BUTTON THEME DEFAULT */
-    --btn-bg: var(--color-brand-500);
-    --btn-label: var(--color-neutral-50);
+	/* BUTTON THEME DEFAULT */
+	--btn-bg: var(--color-brand-500);
+	--btn-label: var(--color-neutral-50);
 
-    display: grid;
-    place-content: center;
-    padding: var(--spacing-2xs) var(--spacing-s);
-    background-color: var(--btn-bg);
-    color: var(--btn-label);
-    border-radius: var(--border-radius);
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    width: max-content;
+	display: grid;
+	place-content: center;
+	padding: var(--spacing-2xs) var(--spacing-s);
+	background-color: var(--btn-bg);
+	color: var(--btn-label);
+	border-radius: var(--border-radius);
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+	cursor: pointer;
+	transition: var(--transition);
+	width: max-content;
 }
 
 .text-sm {
-    font-size: var(--text-size-sm);
-    line-height: var(--leading-relaxed);
+	font-size: var(--text-size-sm);
+	line-height: var(--leading-relaxed);
 }
 
 .text-base {
-    font-size: var(--text-size-base);
-    line-height: var(--leading-normal);
+	font-size: var(--text-size-base);
+	line-height: var(--leading-normal);
 }
 
 .text-lg {
-    font-size: var(--text-size-lg);
-    line-height: var(--leading-normal);
+	font-size: var(--text-size-lg);
+	line-height: var(--leading-normal);
 }
 
 .text-xl {
-    font-size: var(--text-size-xl);
-    line-height: var(--leading-snug);
+	font-size: var(--text-size-xl);
+	line-height: var(--leading-snug);
 }
 
 .text-2xl {
-    font-size: var(--text-size-2xl);
-    line-height: var(--leading-snug);
+	font-size: var(--text-size-2xl);
+	line-height: var(--leading-snug);
 }
 
 .text-3xl {
-    font-size: var(--text-size-3xl);
-    line-height: var(--leading-tight);
+	font-size: var(--text-size-3xl);
+	line-height: var(--leading-tight);
 }
 
 .text-4xl {
-    font-size: var(--text-size-4xl);
-    line-height: var(--leading-tight);
+	font-size: var(--text-size-4xl);
+	line-height: var(--leading-tight);
 }
 
 /* COMPONENTS */
 
 .card {
-    position: relative;
-    background-color: var(--bg-clr-main);
-    color: var(--text-clr-main);
-    padding: var(--spacing-s);
-    border-radius: var(--border-radius);
-    border: 0.5px solid var(--border-clr);
-    transition: var(--transition);
+	position: relative;
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
+	padding: var(--spacing-s);
+	border-radius: var(--border-radius);
+	border: 0.5px solid var(--border-clr);
+	transition: var(--transition);
 
-    a::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-    }
+	a::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+	}
 
-    &.grid {
-        gap: var(--spacing-xs) 0;
-    }
-    &:hover {
-        box-shadow: var(--box-shadow-md);
-    }
+	&.grid {
+		gap: var(--spacing-xs) 0;
+	}
+	&:hover {
+		box-shadow: var(--box-shadow-md);
+	}
 
-    p.description {
-        overflow: hidden;
-        display: -webkit-box;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-    }
+	p.description {
+		overflow: hidden;
+		display: -webkit-box;
+		line-clamp: 3;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+	}
 
-    figure {
-        position: relative;
-        background-color: white;
-        padding: var(--spacing-l) var(--spacing-m);
-        border-radius: var(--border-radius);
-        img {
-            aspect-ratio: 3/4;
-            object-fit: contain;
-        }
+	figure {
+		position: relative;
+		background-color: white;
+		padding: var(--spacing-l) var(--spacing-m);
+		border-radius: var(--border-radius);
+		img {
+			aspect-ratio: 3/4;
+			object-fit: contain;
+		}
 
-        figcaption.category {
-            text-transform: uppercase;
-            position: absolute;
-            left: var(--spacing-2xs);
-        }
-    }
-}
-
-#item-list {
-    padding-block: var(--spacing-xl);
+		figcaption.category {
+			text-transform: uppercase;
+			position: absolute;
+			left: var(--spacing-2xs);
+		}
+	}
 }
 
 /* UTILITIES */
 
 .pill {
-    background-color: var(--dark-grey);
-    color: var(--white);
-    width: fit-content;
-    border-radius: var(--border-radius);
-    padding: var(--padding-xs) var(--padding-md);
+	background-color: var(--dark-grey);
+	color: var(--white);
+	width: fit-content;
+	border-radius: var(--border-radius);
+	padding: var(--padding-xs) var(--padding-md);
 }
 
 .hide {
-    display: none;
+	display: none;
 }
 
 .breadcrumbs {
-    font-size: var(--text-size-sm);
-    margin-top: var(--spacing-xs);
+	padding-block: var(--spacing-m);
+	font-size: var(--text-size-sm);
 }
 
 .breadcrumbs ul {
-    display: flex;
-    gap: var(--spacing-2xs);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
+	display: flex;
+	gap: var(--spacing-2xs);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
 }
 
 .breadcrumbs li::after {
-    content: "/";
-    margin-left: var(--spacing-2xs);
-    color: #aaa;
+	content: "/";
+	margin-left: var(--spacing-2xs);
+	color: #aaa;
 }
 
 .breadcrumbs li:last-child::after {
-    content: "";
+	content: "";
 }
 
 .breadcrumbs a {
-    text-decoration: none;
-    color: var(--color-brand-700);
+	text-decoration: none;
+	color: var(--color-brand-700);
 }
 
 .breadcrumbs [aria-current="page"] {
-    color: var(--dark-grey);
+	color: var(--dark-grey);
 }
