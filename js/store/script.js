@@ -3,7 +3,6 @@ import {
 	renderSingleItem,
 	renderItemList,
 	addToCart,
-	loadCartProducts,
 	displayCart,
 } from "./modules.js";
 import { isSingleProduct } from "./variables.js";
@@ -15,6 +14,16 @@ let product;
 
 if (isSingleProduct && id) {
 	product = await getItemById(id).then(renderSingleItem);
+
+	console.log(product);
+
+	const CartButton = document.querySelector("#addToCart");
+
+	console.log(CartButton);
+	CartButton.addEventListener("click", () => {
+		addToCart(product);
+		displayCart();
+	});
 } else {
 	await renderItemList("/products");
 }
@@ -22,10 +31,5 @@ if (isSingleProduct && id) {
 const ShoppingBasketOpenButton = document.querySelector(
 	"#shoppingCartOpenButton"
 );
-const CartButton = document.querySelector("#addToCart");
 
-ShoppingBasketOpenButton.addEventListener("mousedown", displayCart);
-CartButton.addEventListener("mousedown", () => {
-	addToCart(product);
-	displayCart();
-});
+ShoppingBasketOpenButton.addEventListener("click", displayCart);

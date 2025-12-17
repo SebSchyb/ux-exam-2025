@@ -1,76 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <script type="module" src="js/store/shop.js"></script>
-        <script type="module" src="js/auth/script.js"></script>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/components/authHeader.css" />
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script type="module" src="js/store/shop.js"></script>
+		<script type="module" src="js/store/script.js"></script>
+		<script type="module" src="js/auth/script.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/components/header.css" />
+	</head>
 
-    <body>
-        <header>
-            <div class="container row">
-                <h1>Title</h1>
-                <div id="auth">
-                    <p id="userStatus"></p>
-                    <button id="signOutBtn" class="btn secondary">
-                        Sign Out
-                    </button>
-                </div>
-                <nav id="public">
-                    <a href="/login.html" class="btn" data-theme="primary"
-                        >Sign In</a
-                    >
-                    <a href="/signup.html" class="btn" data-theme="secondary"
-                        >Register</a
-                    >
-                </nav>
-            </div>
-        </header>
-        <main>
-            <div class="test">
-                <a href="?category=men%27s%20clothing">Mens Clothing</a>
-                <a href="?category=women%27s%20clothing">Womens Clothing</a>
-                <a href="?category=jewelery">Jewelery</a>
-                <a href="?category=electronics">Electronics</a>
-            </div>
-            <section data-theme="primary">
-                <ul id="userList" class="container row wrap">
-                    <template>
-                        <li>
-                            <p></p>
-                        </li>
-                    </template>
-                </ul>
-            </section>
-            <section
-                class="container grid col-sm align-rows row-4"
-                id="item-list"
-            >
-                <template>
-                    <article class="grid card">
-                        <img src="image 3.png" alt="" />
-                        <header>
-                            <h4 class="title">
-                                <a href="/">
-                                    Fjallraven - Foldsack No. 1 Backpack, Fits
-                                    15 Laptops
-                                </a>
-                            </h4>
-                            <p class="category pill text-sm">men's clothing</p>
-                        </header>
-                        <div class="row">
-                            <p class="description"></p>
-                        </div>
-                        <div class="row">
-                            <p class="price">DKK</p>
-                        </div>
-                    </article>
-                </template>
-            </section>
-        </main>
-    </body>
+	<body>
+		<header>
+			<div class="container row header-top">
+				<a class="brand" href="/" aria-label="Home">
+					<img src="assets/images/logo.svg" alt="Logo" />
+				</a>
+				<div class="row header-actions">
+					<button
+						id="shoppingCartOpenButton"
+						aria-label="Shopping cart"
+						data-theme="none"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="28"
+							height="28"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path d="M6 7h12l-1 14H7L6 7Z"></path>
+							<path d="M9 7a3 3 0 0 1 6 0"></path>
+						</svg>
+					</button>
+
+					<a class="btn" data-theme="primary" href="/signin.html"
+						>Sign in</a
+					>
+					<a class="btn" data-theme="secondary" href="/register.html"
+						>Register</a
+					>
+				</div>
+			</div>
+			<section id="shoppingCart">
+				<article>
+					<header>
+						<button
+							id="closeBtn"
+							aria-label="Close"
+							data-theme="none"
+						>
+							<img src="/assets/icons/x.svg" alt="Close button" />
+						</button>
+						<h2 class="text-lg">Shopping cart</h2>
+					</header>
+					<p class="text-sm empty"></p>
+					<ul></ul>
+					<template>
+						<li class="row">
+							<img src="image 3.png" alt="" />
+							<article class="text-sm">
+								<h3>Mens Casual Premium Slim Fit T-Shirts</h3>
+								<button
+									class="removeProductBtn"
+									data-theme="none"
+								>
+									remove product
+								</button>
+								<header></header>
+								<footer class="row">
+									<div class="counter">
+										<button
+											class="dec"
+											aria-label="Decrease quantity"
+											data-theme="secondary"
+										>
+											-
+										</button>
+										<input inputmode="numeric" />
+										<button
+											class="inc"
+											aria-label="Increase quantity"
+											data-theme="secondary"
+										>
+											+
+										</button>
+									</div>
+									<p>DKK</p>
+								</footer>
+							</article>
+						</li>
+					</template>
+				</article>
+				<footer>
+					<p class="text-sm">
+						<span>Shipping:</span>
+						<span class="bold">DKK 67.00</span>
+					</p>
+					<p class="bold">
+						<span>Total:</span>
+						<span class="total"></span>
+					</p>
+					<button>Check out now</button>
+				</footer>
+			</section>
+		</header>
+		<nav aria-label="Primary" data-theme="dark">
+			<ul class="container row navlinks">
+				<li>
+					<a href="?category=women%27s%20clothing"
+						>Women's Clothing</a
+					>
+				</li>
+				<li>
+					<a href="?category=men%27s%20clothing">Men's Clothing</a>
+				</li>
+				<li><a href="?category=jewelery">Jewelery</a></li>
+				<li><a href="?category=electronics">Electronics</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section data-theme="primary">
+				<ul id="userList" class="container row wrap">
+					<template>
+						<li>
+							<p></p>
+						</li>
+					</template>
+				</ul>
+			</section>
+			<section
+				class="container grid col-sm align-rows row-4"
+				id="item-list"
+			>
+				<template>
+					<article class="grid card">
+						<img src="image 3.png" alt="" />
+						<header>
+							<h4 class="title">
+								<a href="/">
+									Fjallraven - Foldsack No. 1 Backpack, Fits
+									15 Laptops
+								</a>
+							</h4>
+							<p class="category pill text-sm">men's clothing</p>
+						</header>
+						<div class="row">
+							<p class="description"></p>
+						</div>
+						<div class="row">
+							<p class="price">DKK</p>
+						</div>
+					</article>
+				</template>
+			</section>
+		</main>
+	</body>
 </html>

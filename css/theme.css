@@ -7,6 +7,7 @@ body {
 
 header,
 footer,
+nav,
 section,
 article,
 .container {
@@ -15,6 +16,11 @@ article,
 
 	&[data-theme="primary"] {
 		--bg-clr-main: var(--color-brand-400);
+		--text-clr-main: var(--color-neutral-50);
+	}
+
+	&[data-theme="dark"] {
+		--bg-clr-main: var(--color-neutral-900);
 		--text-clr-main: var(--color-neutral-50);
 	}
 
