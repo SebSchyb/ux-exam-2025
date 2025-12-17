@@ -170,16 +170,25 @@ function decreaseProductQuantity(e, product) {
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
 }
 
-function increaseProductQuantity(e, product) {
+function increaseProductQuantity(e, product, currentTotal) {
+	const cartTotalDisplay = document.querySelector("#shoppingCart .total");
 	const current = getCart();
+	let cartTotal = currentTotal;
+
+	console.log(cartTotal);
 	const basket = current.map((item) => {
 		if (item.id == product.id) {
+			console.log("test");
+			cartTotal = cartTotal - item.quantity * item.price;
+
 			item.quantity = item.quantity + 1;
 
 			e.target.previousElementSibling.value = item.quantity;
 			e.target.parentElement.parentElement.querySelector(
 				"p"
 			).textContent = currency(item.quantity * item.price);
+
+			cartTotal = cartTotal + item.quantity * item.price;
 		}
 
 		// ENABLE DECREASE IF QUANTITY > 1
@@ -189,6 +198,9 @@ function increaseProductQuantity(e, product) {
 
 		return item;
 	});
+	console.log(cartTotal);
 
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
+	cartTotalDisplay.textContent = currency(cartTotal);
+	console.log(cartTotal);
 }
