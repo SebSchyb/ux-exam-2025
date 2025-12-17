@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import {
 	submit,
 	submitSignOut as signOut,
@@ -52,6 +53,8 @@ if (isLoginPage || isSignUpPage) {
 	pageForm.addEventListener("submit", submit);
 } else if (authUser) {
 	// IF A USER IS CURRENTLY SIGNED IN
+
+	createElement("button", "data");
 
 	// display auth-scoped UI
 	headerActions.appendChild(`
