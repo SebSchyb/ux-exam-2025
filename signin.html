@@ -1,123 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script type="module" src="js/auth/script.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/components/form.css" />
+		<link rel="stylesheet" href="css/components/header.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
-	<script type="module" src="js/auth/script.js"></script>
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/components/form.css" />
-	<link rel="stylesheet" href="css/components/header.css" />
-</head>
-
-<body>
-	<header>
-		<div class="container row header-top">
-			<a class="brand" href="/" aria-label="Home">
-				<img src="assets/images/logo.svg" alt="Logo" />
-			</a>
-			<div class="row header-actions">
-				<button id="shoppingCartOpenButton" aria-label="Shopping cart" data-theme="none">
-					<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M6 7h12l-1 14H7L6 7Z"></path>
-						<path d="M9 7a3 3 0 0 1 6 0"></path>
-					</svg>
-				</button>
-
-				<a class="btn" data-theme="primary" href="/signin.html">Sign in</a>
-				<a class="btn" data-theme="secondary" href="/register.html">Register</a>
-			</div>
-		</div>
-		<aside id="shoppingCart">
-			<article>
-				<header>
-					<button id="closeBtn" aria-label="Close" data-theme="none">
-						<img src="/assets/icons/x.svg" alt="Close button" />
-					</button>
-					<h2 class="text-lg">Shopping cart</h2>
-				</header>
-				<p class="text-sm empty"></p>
-				<ul></ul>
-				<template>
-					<li class="row">
-						<img src="image 3.png" alt="" />
-						<article class="text-sm">
-							<h3>
-								<a href="">
-									Mens Casual Premium Slim Fit T-Shirts
-								</a>
-							</h3>
-							<button class="removeProductBtn" data-theme="none">
-								remove product
-							</button>
-							<header></header>
-							<footer class="row">
-								<div class="counter">
-									<button class="dec" aria-label="Decrease quantity" data-theme="secondary">
-										-
-									</button>
-									<input inputmode="numeric" />
-									<button class="inc" aria-label="Increase quantity" data-theme="secondary">
-										+
-									</button>
-								</div>
-								<p>DKK</p>
-							</footer>
-						</article>
-					</li>
-				</template>
-			</article>
-			<footer>
-				<p class="text-sm">
-					<span>Shipping:</span>
-					<span class="bold">DKK 67.00</span>
-				</p>
-				<p class="bold">
-					<span>Total:</span>
-					<span class="total"></span>
-				</p>
-				<a href="checkout.html" class="btn" data-theme="primary">Check out now</a>
-			</footer>
-		</aside>
-	</header>
-	<nav aria-label="Primary" data-theme="dark">
-		<ul class="container row navlinks">
-			<li>
-				<a href="/shop.html?category=women%27s%20clothing">Women's Clothing</a>
-			</li>
-			<li>
-				<a href="/shop.html?category=men%27s%20clothing">Men's Clothing</a>
-			</li>
-			<li><a href="/shop.html?category=jewelery">Jewellery</a></li>
-			<li>
-				<a href="/shop.html?category=electronics">Electronics</a>
-			</li>
-		</ul>
-	</nav>
-	<main>
-		<section>
-			<form id="login">
-				<legend>Sign In</legend>
-				<p id="userStatus"></p>
-				<label for="user_email">
-					<span>Email</span>
-					<input id="user_email" name="user_email" type="text" />
-					<span class="error"></span>
-				</label>
-				<label for="user_password">
-					<span>Password</span>
-					<input id="user_password" name="user_password" type="password" />
-					<span class="error"></span>
-				</label>
-				<button class="btn" data-theme="primary">Login</button>
-				<a href="/" class="userReset">
-					Forgot your email or password?
+	<body>
+		<header>
+			<div class="container row header-top">
+				<a class="brand" href="/" aria-label="Home">
+					<img src="assets/images/logo.svg" alt="Logo" />
 				</a>
-			</form>
-		</section>
-	</main>
-	<footer></footer>
-</body>
-
+				<div class="row header-actions">
+					<button
+						id="shoppingCartOpenButton"
+						aria-label="Shopping cart"
+						data-theme="none"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="28"
+							height="28"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path d="M6 7h12l-1 14H7L6 7Z"></path>
+							<path d="M9 7a3 3 0 0 1 6 0"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+			<aside id="shoppingCart">
+				<article>
+					<header>
+						<button
+							id="closeBtn"
+							aria-label="Close"
+							data-theme="none"
+						>
+							<img src="/assets/icons/x.svg" alt="Close button" />
+						</button>
+						<h2 class="text-lg">Shopping cart</h2>
+					</header>
+					<p class="text-sm empty"></p>
+					<ul></ul>
+					<template>
+						<li class="row">
+							<img src="image 3.png" alt="" />
+							<article class="text-sm">
+								<h3>
+									<a href="">
+										Mens Casual Premium Slim Fit T-Shirts
+									</a>
+								</h3>
+								<button
+									class="removeProductBtn"
+									data-theme="none"
+								>
+									remove product
+								</button>
+								<header></header>
+								<footer class="row">
+									<div class="counter">
+										<button
+											class="dec"
+											aria-label="Decrease quantity"
+											data-theme="secondary"
+										>
+											-
+										</button>
+										<input inputmode="numeric" />
+										<button
+											class="inc"
+											aria-label="Increase quantity"
+											data-theme="secondary"
+										>
+											+
+										</button>
+									</div>
+									<p>DKK</p>
+								</footer>
+							</article>
+						</li>
+					</template>
+				</article>
+				<footer>
+					<p class="text-sm">
+						<span>Shipping:</span>
+						<span class="bold">DKK 67.00</span>
+					</p>
+					<p class="bold">
+						<span>Total:</span>
+						<span class="total"></span>
+					</p>
+					<a href="checkout.html" class="btn" data-theme="primary"
+						>Check out now</a
+					>
+				</footer>
+			</aside>
+		</header>
+		<nav aria-label="Primary" data-theme="dark">
+			<ul class="container row navlinks">
+				<li>
+					<a href="/shop.html?category=women%27s%20clothing"
+						>Women's Clothing</a
+					>
+				</li>
+				<li>
+					<a href="/shop.html?category=men%27s%20clothing"
+						>Men's Clothing</a
+					>
+				</li>
+				<li><a href="/shop.html?category=jewelery">Jewellery</a></li>
+				<li>
+					<a href="/shop.html?category=electronics">Electronics</a>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<form id="login">
+					<legend>Sign In</legend>
+					<p id="userStatus"></p>
+					<label for="user_email">
+						<span>Email</span>
+						<input id="user_email" name="user_email" type="text" />
+						<span class="error"></span>
+					</label>
+					<label for="user_password">
+						<span>Password</span>
+						<input
+							id="user_password"
+							name="user_password"
+							type="password"
+						/>
+						<span class="error"></span>
+					</label>
+					<button class="btn" data-theme="primary">Login</button>
+					<a href="/" class="userReset">
+						Forgot your email or password?
+					</a>
+				</form>
+			</section>
+		</main>
+		<footer></footer>
+	</body>
 </html>

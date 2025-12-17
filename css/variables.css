@@ -11,11 +11,7 @@
 
 	/* PRIMITIVE COLORS */
 
-	--hero-overlay: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  );
-
+	--hero-overlay: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 	--color-brand-50: oklch(0.959 0.025 345.91);
 	--color-brand-100: oklch(0.927 0.046 346.44);
@@ -41,17 +37,17 @@
 	--color-neutral-900: oklch(0.221 0.046 293.78);
 	--color-neutral-950: oklch(0.181 0.038 294.36);
 
-	--color-error-50: oklch(0.95 0.021 6.71);
-	--color-error-100: oklch(0.909 0.038 7.9);
-	--color-error-200: oklch(0.81 0.087 11.05);
-	--color-error-300: oklch(0.727 0.131 14.96);
-	--color-error-400: oklch(0.653 0.177 19.8);
+	--color-error-50: oklch(0.959 0.017 17.56);
+	--color-error-100: oklch(0.917 0.034 17.84);
+	--color-error-200: oklch(0.836 0.076 17.8);
+	--color-error-300: oklch(0.756 0.122 19.69);
+	--color-error-400: oklch(0.677 0.178 22.32);
 	--color-error-500: oklch(0.596 0.213 25.42);
-	--color-error-600: oklch(0.519 0.196 25.39);
-	--color-error-700: oklch(0.42 0.156 23.18);
-	--color-error-800: oklch(0.315 0.112 20.08);
-	--color-error-900: oklch(0.212 0.067 15.44);
-	--color-error-950: oklch(0.141 0.04 6.11);
+	--color-error-600: oklch(0.504 0.18 25.49);
+	--color-error-700: oklch(0.413 0.148 25.12);
+	--color-error-800: oklch(0.324 0.116 25.59);
+	--color-error-900: oklch(0.235 0.084 25.63);
+	--color-error-950: oklch(0.186 0.066 24.61);
 
 	/* TYPOGRAPHY */
 
