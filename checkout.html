@@ -42,25 +42,93 @@
         </ul>
     </nav>
     <main>
-        <h1>Checkout</h1>
+        <header>
+            <h1>Checkout</h1>
+        </header>
+        <section>
+            <div id="checkout-items"></div>
+            <article>
+                <template id="checkout-item-template">
+                    <div class="checkout-item">
+                        <span class="title"></span>
+                        <span class="quantity"></span>
+                        <span class="price"></span>
+                    </div>
+                </template>
+            </article>
+            <article>
+                <template id="checkout-summary-template">
+                    <div class="checkout-summary">
+                        <div class="items-total"></div>
+                        <div class="shipping"></div>
+                        <strong class="grand-total"></strong>
+                    </div>
+                </template>
+            </article>
+        </section>
+        <section>
+            <form id="checkout-form" method="post" action="/checkout">
 
-        <div id="checkout-items"></div>
+                <fieldset>
+                    <legend>Billing Information</legend>
 
-        <template id="checkout-item-template">
-            <div class="checkout-item">
-                <span class="title"></span>
-                <span class="quantity"></span>
-                <span class="price"></span>
-            </div>
-        </template>
+                    <label>
+                        Full Name
+                        <input type="text" name="full_name" required>
+                    </label>
 
-        <template id="checkout-summary-template">
-            <div class="checkout-summary">
-                <div class="items-total"></div>
-                <div class="shipping"></div>
-                <strong class="grand-total"></strong>
-            </div>
-        </template>
+                    <label>
+                        Email Address
+                        <input type="email" name="email" required>
+                    </label>
+
+                    <label>
+                        Billing Address
+                        <input type="text" name="address" required>
+                    </label>
+                    <label>
+                        Delivery Address
+                        <input type="text" name="address" required>
+                    </label>
+
+                    <label>
+                        City
+                        <input type="text" name="city" required>
+                    </label>
+
+                    <label>
+                        ZIP / Postal Code
+                        <input type="text" name="zip" required>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <div class="card-details">
+                        <legend>Payment Details</legend>
+                        <label>
+                            Cardholder Name
+                            <input type="text" placeholder="Jesse Pinkman" name="card_name" autocomplete="cc-name"
+                                required>
+                        </label>
+
+                        <label>
+                            Card Number
+                            <input type="text" name="card_number" inputmode="numeric" autocomplete="cc-number"
+                                placeholder="1234 5678 9012 3456" required>
+                        </label>
+
+                        <label>
+                            CVV
+                            <input type="text" name="card_cvv" inputmode="numeric" autocomplete="cc-csc"
+                                placeholder="123" required>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button id="place_order" type="button">Place Order</button>
+
+            </form>
+        </section>
     </main>
 
 </body>

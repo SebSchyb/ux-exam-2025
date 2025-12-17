@@ -48,3 +48,8 @@ function renderCheckoutItems() {
 }
 
 window.addEventListener("DOMContentLoaded", renderCheckoutItems);
+
+document.querySelector("#place_order").addEventListener("click", () => {
+    localStorage.removeItem("shopping_basket");
+    alert("success");
+});

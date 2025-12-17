@@ -92,7 +92,7 @@ export function loadCartProducts(cart) {
 
 	let cartTotal = 0;
 
-	if (!cart.length) {
+	if (!cart || !cart.length) {
 		ShoppingBasketSidebar.querySelector("p").textContent =
 			"Your shopping cart is empty.";
 	} else {
