@@ -1,9 +1,4 @@
-import { createElement } from "react";
-import {
-	submit,
-	submitSignOut as signOut,
-	displayUserList,
-} from "./modules.js";
+import { submit, submitSignOut as signOut } from "./modules.js";
 import { clearError } from "./utils.js";
 import { isLoginPage, isSignUpPage } from "./variables.js";
 
@@ -12,10 +7,6 @@ const pageForm = document.querySelector("form");
 
 // AUTH COMPONENTS
 const headerActions = document.querySelector("header .header-actions");
-
-const authHeader = document.querySelector("#auth");
-const publicHeader = document.querySelector("#public");
-const UserStatus = document.querySelector("#userStatus");
 
 // LOCAL STORAGE
 const authUser = localStorage.getItem("userEmail"); // email of user currently signed in
@@ -51,33 +42,45 @@ if (isLoginPage || isSignUpPage) {
 
 	// ADD SUBMIT EVENT TO CURRENT PAGE'S FORM
 	pageForm.addEventListener("submit", submit);
-} else if (authUser) {
+}
+
+if (authUser) {
 	// IF A USER IS CURRENTLY SIGNED IN
 
-	createElement("button", "data");
+	// create auth-scoped UI
+	const userTag = document.createElement("p");
+	const signOutButton = document.createElement("button");
+
+	userTag.classList = "userTag";
+	userTag.textContent = authUser;
+
+	signOutButton.dataset.theme = "secondary";
+	signOutButton.id = "signOutBtn";
+	signOutButton.textContent = "Sign out";
 
 	// display auth-scoped UI
-	headerActions.appendChild(`
-		<button data-theme="secondary" id="signOutBtn">Sign out</button>`);
+	headerActions.appendChild(userTag);
+	headerActions.appendChild(signOutButton);
 
-	const SignOutButton = document.querySelector("#signOutBtn");
-	UserStatus.textContent = authUser;
-
-	// display sign out button
-	SignOutButton.addEventListener("click", signOut);
+	signOutButton.addEventListener("click", signOut);
 } else {
 	// PUBLIC PAGES: hide auth-scoped content when a user is not currently signed in
 
-	const test = `<a class="btn" data-theme="primary" href="/signin.html"
-						>Sign in</a
-					>
-					<a class="btn" data-theme="secondary" href="/register.html"
-						>Register</a
-					>`;
+	// create public-scoped UI
+	const signInButton = document.createElement("a");
+	const registerButton = document.createElement("a");
 
-	headerActions.append(test);
+	signInButton.dataset.theme = "primary";
+	signInButton.classList = "btn";
+	signInButton.href = "/signin.html";
+	signInButton.textContent = "Sign in";
 
-	// authHeader.classList.add("hide");
-	// UserStatus.classList.add("hide");
-	// SignOutButton.classList.add("hide");
+	registerButton.dataset.theme = "secondary";
+	registerButton.classList = "btn";
+	registerButton.href = "/register.html";
+	registerButton.textContent = "Register";
+
+	// display public-scoped UI
+	headerActions.append(signInButton);
+	headerActions.append(registerButton);
 }
