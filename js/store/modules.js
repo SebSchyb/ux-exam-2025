@@ -42,6 +42,8 @@ export const renderSingleItem = async (item) => {
 	clone.querySelector(".price").textContent = item.price;
 
 	container.appendChild(clone);
+
+	return item;
 };
 
 // SHOPPING CART
@@ -76,7 +78,7 @@ export function displayCart() {
 	const ShoppingBasketExitButton =
 		ShoppingBasketSidebar.querySelector("#closeBtn");
 
-	ShoppingBasketExitButton.addEventListener("mousedown", () => {
+	ShoppingBasketExitButton.addEventListener("click", () => {
 		ShoppingBasketSidebar.style.transform =
 			"translateX(var(--max-width-md))";
 	});
@@ -86,6 +88,9 @@ export function loadCartProducts(cart) {
 	const ShoppingBasketSidebar = document.querySelector("#shoppingCart");
 	const cartItemList = document.querySelector("#shoppingCart ul");
 	const cartItemTemp = document.querySelector("#shoppingCart template");
+	const cartTotalDisplay = document.querySelector("#shoppingCart .total");
+
+	let cartTotal = 0;
 
 	if (!cart.length) {
 		ShoppingBasketSidebar.querySelector("p").textContent =
@@ -104,21 +109,20 @@ export function loadCartProducts(cart) {
 			cartItem.querySelector("footer p").textContent = currency(
 				product.price * product.quantity
 			);
+			cartTotal = cartTotal + 67 + product.price * product.quantity;
 
 			cartItem
 				.querySelector(".removeProductBtn")
-				.addEventListener("mousedown", (e) =>
-					removeProduct(e, product)
-				);
+				.addEventListener("click", (e) => removeProduct(e, product));
 
 			cartItem
 				.querySelector(".counter .dec")
-				.addEventListener("mousedown", (e) =>
+				.addEventListener("click", (e) =>
 					decreaseProductQuantity(e, product)
 				);
 			cartItem
 				.querySelector(".counter .inc")
-				.addEventListener("mousedown", (e) =>
+				.addEventListener("click", (e) =>
 					increaseProductQuantity(e, product)
 				);
 
@@ -127,6 +131,8 @@ export function loadCartProducts(cart) {
 			return cartItem;
 		});
 	}
+
+	cartTotalDisplay.textContent = currency(cartTotal);
 }
 
 function removeProduct(e, product) {

@@ -1,6 +1,4 @@
-body > header,
-body > main,
-body > footer {
+body > * {
 	.container {
 		max-width: var(--max-width-xl);
 		padding-inline: var(--spacing-s-m);
