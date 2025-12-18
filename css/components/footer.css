@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-neutral-900);
+  color: var(--text-color-white);
+  width: 100%;
+  padding-block: var(--spacing-xs-s);
+  position: absolute;
+  bottom: 0;
+}
+body {
+    position: relative;
+    min-height: 100svh;
+}
+main > *:last-child{
+    margin-bottom: calc(var(--margin-base)*4);
+}
