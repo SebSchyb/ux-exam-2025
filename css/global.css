@@ -148,32 +148,33 @@ a.btn {
 .breadcrumbs {
 	padding-block: var(--spacing-m);
 	font-size: var(--text-size-sm);
-}
 
-.breadcrumbs ul {
-	display: flex;
-	gap: var(--spacing-2xs);
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	flex-wrap: wrap;
-}
+	& [aria-current="page"] {
+		color: var(--dark-grey);
+		cursor: default;
+	}
 
-.breadcrumbs li::after {
-	content: "/";
-	margin-left: var(--spacing-2xs);
-	color: #aaa;
-}
+	a {
+		text-decoration: none;
+		color: var(--color-brand-700);
+	}
 
-.breadcrumbs li:last-child::after {
-	content: "";
-}
+	ul {
+		display: flex;
+		gap: var(--spacing-2xs);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		flex-wrap: wrap;
 
-.breadcrumbs a {
-	text-decoration: none;
-	color: var(--color-brand-700);
-}
+		li::after {
+			content: "/";
+			margin-left: var(--spacing-2xs);
+			color: #aaa;
+		}
 
-.breadcrumbs [aria-current="page"] {
-	color: var(--dark-grey);
+		li:last-child::after {
+			content: "";
+		}
+	}
 }
