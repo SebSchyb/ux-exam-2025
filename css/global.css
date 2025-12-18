@@ -1,10 +1,15 @@
 body {
+	position: relative;
+	min-height: 100svh;
 	background-color: var(--bg-clr-main);
 	color: var(--text-clr-main);
 	font-family: var(--body-font);
 	font-size: var(--text-size-base);
 	line-height: 1.5;
-	min-height: 100svh;
+
+	main {
+		padding-block: 0 var(--spacing-3xl);
+	}
 }
 
 section,

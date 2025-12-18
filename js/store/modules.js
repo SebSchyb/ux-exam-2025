@@ -62,7 +62,7 @@ export function addToCart(product) {
 
 	if (!current || !current.cart.length) {
 		basket.cart = [{ ...product, quantity: 1 }];
-	} else if (current.cart.some((item) => item.id === product.id)) {
+	} else if (current.cart.find((item) => item.id === product.id)) {
 		basket.cart = current.cart.map((item) => {
 			if (item.id == product.id) {
 				item.quantity = item.quantity + 1;

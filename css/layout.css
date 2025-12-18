@@ -46,3 +46,6 @@ body > * {
 		}
 	}
 }
+/* main > *:last-child {
+	margin-bottom: var(--spacing-xl);
+} */

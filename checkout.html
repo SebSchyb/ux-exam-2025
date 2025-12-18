@@ -8,43 +8,23 @@
 		<script type="module" src="js/store/script.js"></script>
 		<script type="module" src="js/store/checkout.js"></script>
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/components/form.css" />
-		<link rel="stylesheet" href="css/components/header.css" />
-		<link rel="stylesheet" href="css/components/hero.css" />
+		<link rel="stylesheet" href="css/components/checkout.css" />
 	</head>
 
 	<body>
 		<header>
-			<div class="container row header-top">
-				<a class="brand" href="/" aria-label="Home">
+			<nav class="container row">
+				<a id="logo" href="/" aria-label="Home">
 					<img src="assets/images/logo.svg" alt="Logo" />
 				</a>
 				<div class="row header-actions"></div>
-			</div>
+			</nav>
 		</header>
-		<nav aria-label="Primary" data-theme="dark">
-			<ul class="container row navlinks">
-				<li>
-					<a href="/shop.html?category=women%27s%20clothing"
-						>Women's Clothing</a
-					>
-				</li>
-				<li>
-					<a href="/shop.html?category=men%27s%20clothing"
-						>Men's Clothing</a
-					>
-				</li>
-				<li><a href="/shop.html?category=jewelery">Jewellery</a></li>
-				<li>
-					<a href="/shop.html?category=electronics">Electronics</a>
-				</li>
-			</ul>
-		</nav>
 		<main>
-			<header>
+			<header data-theme="dark">
 				<h1>Checkout</h1>
 			</header>
-			<section>
+			<section data-theme="card">
 				<div id="checkout-items"></div>
 				<article>
 					<template id="checkout-item-template">
@@ -69,80 +49,54 @@
 				<form id="checkout-form" method="post" action="/checkout">
 					<fieldset>
 						<legend>Billing Information</legend>
-
-						<label>
-							Full Name
-							<input type="text" name="full_name" required />
-						</label>
-
-						<label>
-							Email Address
-							<input type="email" name="email" required />
-						</label>
-
-						<label>
+						<label for="billing-address">
 							Billing Address
-							<input type="text" name="address" required />
+							<input
+								type="text"
+								name="billing-address"
+								placeholder="Vej Allé"
+								required
+							/>
 						</label>
-						<label>
+						<label for="delivery-address">
 							Delivery Address
-							<input type="text" name="address" required />
-						</label>
-
-						<label>
-							City
-							<input type="text" name="city" required />
-						</label>
-
-						<label>
-							ZIP / Postal Code
-							<input type="text" name="zip" required />
+							<input
+								type="text"
+								name="delivery-address"
+								placeholder="Vej Allé"
+								required
+							/>
 						</label>
 					</fieldset>
 
 					<fieldset>
 						<div class="card-details">
 							<legend>Payment Details</legend>
-							<label>
-								Cardholder Name
-								<input
-									type="text"
-									placeholder="Jesse Pinkman"
-									name="card_name"
-									autocomplete="cc-name"
-									required
-								/>
-							</label>
-
-							<label>
+							<label for="card_number">
 								Card Number
 								<input
-									type="text"
-									name="card_number"
+									type="number"
+									name="card-number"
+									pattern="^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$"
 									inputmode="numeric"
 									autocomplete="cc-number"
 									placeholder="1234 5678 9012 3456"
 									required
 								/>
 							</label>
-
-							<label>
-								CVV
-								<input
-									type="text"
-									name="card_cvv"
-									inputmode="numeric"
-									autocomplete="cc-csc"
-									placeholder="123"
-									required
-								/>
-							</label>
 						</div>
 					</fieldset>
 
-					<button id="place_order" type="button">Place Order</button>
+					<button id="place_order" data-theme="primary" type="submit">
+						Place Order
+					</button>
 				</form>
 			</section>
 		</main>
+		<footer data-theme="dark">
+			<div class="container">
+				<p>&copy; 2025 EK Web Development</p>
+			</div>
+		</footer>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-import { getCart, currency } from "./utils.js";
+import { getCartByUser, checkoutCart, currency } from "./utils.js";
 
 const SHIPPING_COST = 67;
 
@@ -9,7 +9,7 @@ function renderCheckoutItems() {
 		"#checkout-summary-template"
 	);
 
-	console.log({ container, itemTemplate, summaryTemplate });
+	// console.log({ container, itemTemplate, summaryTemplate });
 
 	if (!container || !itemTemplate || !summaryTemplate) {
 		console.error(
@@ -18,7 +18,9 @@ function renderCheckoutItems() {
 		return;
 	}
 
-	const cart = getCart() || [];
+	const authUser = localStorage.getItem("userEmail") || "guest";
+
+	const { cart } = getCartByUser(authUser);
 	console.log("Cart:", cart);
 
 	container.innerHTML = "";
@@ -61,7 +63,11 @@ function renderCheckoutItems() {
 
 window.addEventListener("DOMContentLoaded", renderCheckoutItems);
 
-document.querySelector("#place_order").addEventListener("click", () => {
-	localStorage.removeItem("shopping_basket");
+document.querySelector("#checkout-form").addEventListener("submit", (e) => {
+	e.preventDefault();
+	const authUser = localStorage.getItem("userEmail") || "guest";
+	checkoutCart(authUser);
+
 	alert("success");
+	window.location.replace("/index.html");
 });

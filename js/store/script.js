@@ -5,7 +5,7 @@ import {
 	addToCart,
 	displayCart,
 } from "./modules.js";
-import { isSingleProduct } from "./variables.js";
+import { isSingleProduct, isCheckout } from "./variables.js";
 
 // Get URL for item ID
 const params = new URLSearchParams(window.location.search);
@@ -26,11 +26,13 @@ if (isSingleProduct && id) {
 	await renderItemList("/products");
 }
 
-const ShoppingBasketOpenButton = document.querySelector(
-	"#shoppingCartOpenButton"
-);
+if (!isCheckout) {
+	const ShoppingBasketOpenButton = document.querySelector(
+		"#shoppingCartOpenButton"
+	);
 
-ShoppingBasketOpenButton.addEventListener("click", displayCart);
+	ShoppingBasketOpenButton.addEventListener("click", displayCart);
+}
 
 async function generateProductBreadcrumbs(product, category) {
 	const container = document.querySelector("#breadcrumbscontainer");
@@ -48,8 +50,6 @@ async function generateProductBreadcrumbs(product, category) {
     `;
 		return;
 	}
-
-	// const product = products[productId];
 
 	container.innerHTML += `
     <li>

@@ -7,7 +7,7 @@ export function getCartByUser(user) {
 	const cart = getCarts();
 
 	if (!cart) {
-		const basket = [{ user: user || "guest", cart: [] }];
+		const basket = [{ user: user, cart: [] }];
 		localStorage.setItem("shopping_basket", JSON.stringify(basket));
 
 		return basket.cart;
@@ -17,7 +17,7 @@ export function getCartByUser(user) {
 		return cart.find((cart) => cart.user == "guest");
 	}
 
-	return cart.find((cart) => cart.user == user || "guest");
+	return cart.find((cart) => cart.user == user);
 }
 
 export function storeCart(userCart) {
@@ -34,11 +34,22 @@ export function storeCart(userCart) {
 			return cart;
 		});
 	} else {
-		basket = [...basket, userCart];
+		basket = [...cart, userCart];
 	}
 
-	console.log(basket);
+	localStorage.setItem("shopping_basket", JSON.stringify(basket));
+}
 
+export function checkoutCart(user) {
+	const cart = getCarts();
+
+	let basket;
+
+	if (!user) {
+		basket = cart.filter((cart) => cart.user !== "guest");
+	}
+
+	basket = cart.filter((cart) => cart.user !== user);
 	localStorage.setItem("shopping_basket", JSON.stringify(basket));
 }
 
