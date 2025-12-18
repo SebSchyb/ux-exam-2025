@@ -1,55 +1,67 @@
-import { getCart, currency } from "./utils.js"; 
+import { getCart, currency } from "./utils.js";
 
 const SHIPPING_COST = 67;
 
 function renderCheckoutItems() {
-  const container = document.querySelector("#checkout-items");
-  const itemTemplate = document.querySelector("#checkout-item-template");
-  const summaryTemplate = document.querySelector("#checkout-summary-template");
+	const container = document.querySelector("#checkout-items");
+	const itemTemplate = document.querySelector("#checkout-item-template");
+	const summaryTemplate = document.querySelector(
+		"#checkout-summary-template"
+	);
 
-  console.log({ container, itemTemplate, summaryTemplate });
+	console.log({ container, itemTemplate, summaryTemplate });
 
-  if (!container || !itemTemplate || !summaryTemplate) {
-    console.error("Missing #checkout-items or templates in the HTML (or script loaded too early).");
-    return;
-  }
+	if (!container || !itemTemplate || !summaryTemplate) {
+		console.error(
+			"Missing #checkout-items or templates in the HTML (or script loaded too early)."
+		);
+		return;
+	}
 
-  const cart = getCart() || [];
-  console.log("Cart:", cart);
+	const cart = getCart() || [];
+	console.log("Cart:", cart);
 
-  container.innerHTML = "";
+	container.innerHTML = "";
 
-  if (!cart.length) {
-    container.textContent = "Your shopping basket is empty.";
-    return;
-  }
+	if (!cart.length) {
+		container.textContent = "Your shopping basket is empty.";
+		return;
+	}
 
-  let itemsTotal = 0;
+	let itemsTotal = 0;
 
-  cart.forEach((product) => {
-    const clone = itemTemplate.content.cloneNode(true);
+	cart.forEach((product) => {
+		const clone = itemTemplate.content.cloneNode(true);
 
-    const lineTotal = product.price * product.quantity;
-    itemsTotal += lineTotal;
+		const lineTotal = product.price * product.quantity;
+		itemsTotal += lineTotal;
 
-    clone.querySelector(".title").textContent = product.title;
-    clone.querySelector(".quantity").textContent = `Qty: ${product.quantity}`;
-    clone.querySelector(".price").textContent = currency(lineTotal);
+		clone.querySelector(".title").textContent = product.title;
+		clone.querySelector(
+			".quantity"
+		).textContent = `Qty: ${product.quantity}`;
+		clone.querySelector(".price").textContent = currency(lineTotal);
 
-    container.appendChild(clone);
-  });
+		container.appendChild(clone);
+	});
 
-  const summaryClone = summaryTemplate.content.cloneNode(true);
-  summaryClone.querySelector(".items-total").textContent = `Items total: ${currency(itemsTotal)}`;
-  summaryClone.querySelector(".shipping").textContent = `Shipping: ${currency(SHIPPING_COST)}`;
-  summaryClone.querySelector(".grand-total").textContent = `Total: ${currency(itemsTotal + SHIPPING_COST)}`;
+	const summaryClone = summaryTemplate.content.cloneNode(true);
+	summaryClone.querySelector(
+		".items-total"
+	).textContent = `Items total: ${currency(itemsTotal)}`;
+	summaryClone.querySelector(".shipping").textContent = `Shipping: ${currency(
+		SHIPPING_COST
+	)}`;
+	summaryClone.querySelector(".grand-total").textContent = `Total: ${currency(
+		itemsTotal + SHIPPING_COST
+	)}`;
 
-  container.appendChild(summaryClone);
+	container.appendChild(summaryClone);
 }
 
 window.addEventListener("DOMContentLoaded", renderCheckoutItems);
 
 document.querySelector("#place_order").addEventListener("click", () => {
-    localStorage.removeItem("shopping_basket");
-    alert("success");
+	localStorage.removeItem("shopping_basket");
+	alert("success");
 });

@@ -97,18 +97,16 @@ export function displayCart() {
 	const authUser = localStorage.getItem("userEmail");
 
 	const cart = getCartByUser(authUser);
-
-	console.log("test", cart);
 	loadCartProducts(cart);
 
 	const ShoppingBasketSidebar = document.querySelector("#shoppingCart");
-	ShoppingBasketSidebar.classList.add("open");
+	ShoppingBasketSidebar.dataset.open = true;
 
 	const ShoppingBasketExitButton =
 		ShoppingBasketSidebar.querySelector("#closeBtn");
 
 	ShoppingBasketExitButton.addEventListener("click", () => {
-		ShoppingBasketSidebar.classList.remove("open");
+		ShoppingBasketSidebar.dataset.open = false;
 	});
 }
 
@@ -147,7 +145,7 @@ export function loadCartProducts(userCart) {
 			);
 
 			cartItem
-				.querySelector(".removeProductBtn")
+				.querySelector("#removeProductBtn")
 				.addEventListener("click", (e) => removeProduct(e, product));
 
 			cartItem

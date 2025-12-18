@@ -13,8 +13,8 @@
 
 	<body>
 		<header>
-			<div class="container row header-top">
-				<a class="brand" href="/" aria-label="Home">
+			<nav class="container row">
+				<a id="logo" href="/" aria-label="Home">
 					<img src="assets/images/logo.svg" alt="Logo" />
 				</a>
 				<div class="row header-actions">
@@ -36,8 +36,8 @@
 						</svg>
 					</button>
 				</div>
-			</div>
-			<aside id="shoppingCart">
+			</nav>
+			<aside id="shoppingCart" data-theme="light" data-open="false">
 				<article>
 					<header>
 						<button
@@ -60,10 +60,7 @@
 										Mens Casual Premium Slim Fit T-Shirts
 									</a>
 								</h3>
-								<button
-									class="removeProductBtn"
-									data-theme="none"
-								>
+								<button id="removeProductBtn" data-theme="none">
 									remove product
 								</button>
 								<header></header>
@@ -107,7 +104,10 @@
 			</aside>
 		</header>
 		<nav aria-label="Primary" data-theme="dark">
-			<ul class="container row navlinks">
+			<ul class="container">
+				<li>
+					<a href="/shop.html">Shop all</a>
+				</li>
 				<li>
 					<a href="/shop.html?category=women%27s%20clothing"
 						>Women's Clothing</a

@@ -1,9 +1,10 @@
-/* data themes */
-
 body {
-	--bg-clr-main: none;
-	--text-color-main: var(--color-neutral-800);
-	--text-clr-error: var(--color-error-600);
+	background-color: var(--bg-clr-main);
+	color: var(--text-clr-main);
+
+	a {
+		color: var(--text-clr-link);
+	}
 }
 
 header,
@@ -19,16 +20,25 @@ article,
 	&[data-theme="primary"] {
 		--bg-clr-main: var(--color-brand-400);
 		--text-clr-main: var(--color-neutral-50);
+		--text-clr-link: var(--color-neutral-50);
 	}
 
 	&[data-theme="dark"] {
 		--bg-clr-main: var(--color-neutral-900);
 		--text-clr-main: var(--color-neutral-50);
+		--text-clr-link: var(--color-neutral-50);
+	}
+	&[data-theme="light"] {
+		--bg-clr-main: var(--color-neutral-50);
+		--text-clr-main: var(--color-neutral-900);
+		--text-clr-link: var(--color-neutral-900);
+		--border-clr: var(--color-neutral-200);
 	}
 
 	&[data-theme="card"] {
 		--bg-clr-main: var(--color-neutral-50);
 		--text-clr-main: var(--color-neutral-800);
+		--text-clr-link: var(--color-neutral-800);
 		--border-clr: var(--color-neutral-300);
 	}
 }
@@ -41,7 +51,7 @@ a.btn {
 		--btn-label: var(--color-neutral-50);
 
 		&:hover {
-			--btn-bg: var(--color-brand-400);
+			--btn-bg: var(--color-brand-600);
 		}
 	}
 	&[data-theme="secondary"] {
@@ -60,7 +70,7 @@ a.btn {
 			--btn-label: var(--color-neutral-600);
 		}
 	}
-	&[data-theme="buhovershakeyflipexplode"] {
+	&[data-theme="light"] {
 		--btn-bg: var(--color-neutral-50);
 		--btn-label: var(--color-neutral-900);
 

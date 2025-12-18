@@ -6,8 +6,6 @@ export function getCarts() {
 export function getCartByUser(user) {
 	const cart = getCarts();
 
-	console.log("user", user);
-
 	if (!cart) {
 		const basket = [{ user: user || "guest", cart: [] }];
 		localStorage.setItem("shopping_basket", JSON.stringify(basket));
@@ -25,7 +23,7 @@ export function getCartByUser(user) {
 export function storeCart(userCart) {
 	const cart = getCarts();
 
-	let basket;
+	let basket = [];
 
 	if (cart.find((cart) => cart.user == userCart.user)) {
 		basket = cart.map((cart) => {

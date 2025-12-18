@@ -4,6 +4,7 @@ body {
 	font-family: var(--body-font);
 	font-size: var(--text-size-base);
 	line-height: 1.5;
+	min-height: 100svh;
 }
 
 section,
@@ -38,13 +39,14 @@ a.btn {
 	background-color: var(--btn-bg);
 	color: var(--btn-label);
 	border-radius: var(--border-radius);
-	text-transform: uppercase;
 	text-align: center;
 	font-weight: 600;
 	cursor: pointer;
 	transition: var(--transition);
 	width: max-content;
 }
+
+/* TYPOGRAPHY */
 
 .text-sm {
 	font-size: var(--text-size-sm);
@@ -81,56 +83,6 @@ a.btn {
 	line-height: var(--leading-tight);
 }
 
-/* COMPONENTS */
-
-.card {
-	position: relative;
-	background-color: var(--bg-clr-main);
-	color: var(--text-clr-main);
-	padding: var(--spacing-s);
-	border-radius: var(--border-radius);
-	border: 0.5px solid var(--border-clr);
-	transition: var(--transition);
-
-	a::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-	}
-
-	&.grid {
-		gap: var(--spacing-xs) 0;
-	}
-	&:hover {
-		box-shadow: var(--box-shadow-md);
-	}
-
-	p.description {
-		overflow: hidden;
-		display: -webkit-box;
-		line-clamp: 3;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
-	}
-
-	figure {
-		position: relative;
-		background-color: white;
-		padding: var(--spacing-l) var(--spacing-m);
-		border-radius: var(--border-radius);
-		img {
-			aspect-ratio: 3/4;
-			object-fit: contain;
-		}
-
-		figcaption.category {
-			text-transform: uppercase;
-			position: absolute;
-			left: var(--spacing-2xs);
-		}
-	}
-}
-
 /* UTILITIES */
 
 .pill {
@@ -143,38 +95,4 @@ a.btn {
 
 .hide {
 	display: none;
-}
-
-.breadcrumbs {
-	padding-block: var(--spacing-m);
-	font-size: var(--text-size-sm);
-
-	& [aria-current="page"] {
-		color: var(--dark-grey);
-		cursor: default;
-	}
-
-	a {
-		text-decoration: none;
-		color: var(--color-brand-700);
-	}
-
-	ul {
-		display: flex;
-		gap: var(--spacing-2xs);
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		flex-wrap: wrap;
-
-		li::after {
-			content: "/";
-			margin-left: var(--spacing-2xs);
-			color: #aaa;
-		}
-
-		li:last-child::after {
-			content: "";
-		}
-	}
 }
