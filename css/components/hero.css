@@ -28,11 +28,6 @@
 {
 .hero {
     justify-content: start;
-    /* padding: 10rem; */
-    /* padding: var(--spacing-3xl); */
-
-
-
     article {
         width: 100%;
         color: var(--color-neutral-50);

@@ -49,7 +49,9 @@ function renderCheckoutItems() {
 
 window.addEventListener("DOMContentLoaded", renderCheckoutItems);
 
-document.querySelector("#place_order").addEventListener("click", () => {
+document.querySelector("#checkout-form").addEventListener("submit", (e) => {
+    e.preventDefault();
     localStorage.removeItem("shopping_basket");
     alert("success");
+    window.location.replace("/index.html")
 });
